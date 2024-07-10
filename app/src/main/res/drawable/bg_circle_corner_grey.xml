@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 点击背景 -->
+    <item android:state_enabled="true" >
+        <shape>
+            <corners android:radius="8dp" />
+            <solid android:color="#F9F9F9" />
+            <stroke
+                android:width="0.5dp"
+                android:color="@color/color_f8" />
+        </shape>
+    </item>
+
+
+    <!-- 默认背景 -->
+    <item android:state_enabled="false">
+        <shape>
+            <corners android:radius="8dp" />
+            <solid android:color="#F9F9F9" />
+        </shape>
+    </item>
+
+</selector>

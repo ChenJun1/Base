@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_all_bg1"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_hotline_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/str_dialog_add_group_01"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+    <View
+        android:background="@color/color_view_line"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="0.5dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:paddingRight="18dp"
+            android:paddingLeft="18dp"
+            android:id="@+id/telegramLLayout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:paddingRight="30dp"
+                android:text="@string/str_dialog_add_group_03"
+                android:textColor="@color/color_font_black_21" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="30dp"
+                android:src="@drawable/icon_telegram" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_goto_" />
+
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:background="@color/color_view_line"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:layout_height="0.5dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:paddingRight="18dp"
+            android:id="@+id/WhatsApp2"
+            android:paddingLeft="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:paddingRight="30dp"
+                android:text="@string/str_dialog_add_group_05"
+                android:textColor="@color/color_font_black_21" />
+
+            <ImageView
+                android:id="@+id/cumstomer_iv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="30dp"
+                android:src="@drawable/what" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_goto_" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:background="@color/color_view_line"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:layout_height="0.5dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:paddingRight="18dp"
+            android:paddingLeft="18dp"
+            android:id="@+id/WhatsApp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:paddingRight="30dp"
+                android:text="@string/str_dialog_add_group_03"
+                android:textColor="@color/color_font_black_21" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="30dp"
+                android:src="@drawable/customer" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_goto_" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:background="@color/color_view_line"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:layout_height="0.5dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:paddingRight="18dp"
+            android:id="@+id/WhatsApp1"
+            android:paddingLeft="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:paddingRight="30dp"
+                android:text="@string/str_dialog_add_group_04"
+                android:textColor="@color/color_font_black_21" />
+
+            <ImageView
+                android:id="@+id/cumstomer_iv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="30dp"
+                android:src="@drawable/what" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_goto_" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:background="@color/color_view_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+</LinearLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_main"
+    android:orientation="vertical">
+
+    <com.mobielwa.diki.widget.CustomViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="#ffffff"
+        android:id="@+id/ll_radio"
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:layout_marginTop="3px"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/main_home_rb_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/str_rd_home"
+                android:drawableTop="@drawable/selector_main_bottom1"
+                android:textColor="@drawable/selector_main_mine_top"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:text="@string/str_rd_order"
+                android:id="@+id/main_home_rb_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@drawable/selector_main_bottom2"
+                android:textColor="@drawable/selector_main_mine_top"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:text="@string/str_rd_mine"
+                android:id="@+id/main_home_rb_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@drawable/selector_main_bottom5"
+                android:textColor="@drawable/selector_main_mine_top"
+                android:textSize="12sp" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+</LinearLayout>

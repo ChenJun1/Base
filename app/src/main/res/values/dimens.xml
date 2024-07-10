@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="lucky_item">66dp</dimen>
+    <dimen name="lucky_item_view1">5dp</dimen>
+    <dimen name="lucky_item_text_size">25sp</dimen>
+    <dimen name="lucky_makemoney_tv_width">150dp</dimen>
+    <dimen name="lucky_makemoney_tv_size">16sp</dimen>
+    <dimen name="invitation_rules_tv_size">16sp</dimen>
+
+
+</resources>

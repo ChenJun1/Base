@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8FA"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_mine02"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/white">
+
+
+        <ImageView
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/icon_close" />
+
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/iv_mein01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:src="@drawable/icon_top01" />
+
+        <TextView
+            android:text="下载地址"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/tv_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_mein01"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_marginHorizontal="18dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/tv_acc"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="www.dadasdasdasd.com"
+                android:id="@+id/tv_download_url"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingHorizontal="20dp"
+                android:text="Copy"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/tv_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_acc"
+                android:layout_toEndOf="@+id/tv_download_url"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

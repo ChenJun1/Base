@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bg_ll_myteam_002"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/white_all_bg1"
+    android:orientation="vertical"
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_02_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="@string/str_myteam02_02"
+                android:textColor="@color/color_font_black_61"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_02_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_02_1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="(Rs)"
+                android:textColor="@color/color_font_black_00"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_increase_today"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/bg_btn_0019"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+        <View
+            android:layout_marginVertical="15dp"
+            android:background="@color/color_font_my_team_view"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_02_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="@string/str_myteam02_04"
+                android:textColor="@color/color_font_black_61"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_02_21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_02_2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="@string/str_myteam02_08"
+                android:textColor="@color/color_font_black_00"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_02_22"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/bg_btn_00191"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_marginVertical="15dp"
+            android:background="@color/color_font_my_team_view"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_02_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/str_myteam02_06"
+                android:gravity="center"
+                android:textColor="@color/color_font_black_61"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_02_31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_02_3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="(Rs)"
+                android:textColor="@color/color_font_black_00"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_02_32"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/bg_btn_00192"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_03_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="@string/str_myteam02_03"
+                android:textColor="@color/color_font_black_61"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_03_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_03_1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="(Rs)"
+                android:textColor="@color/color_font_black_00"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_03_12"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/bg_btn_00193"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+        <View
+            android:layout_marginVertical="15dp"
+            android:background="@color/color_font_my_team_view"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_03_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="@string/str_myteam02_05"
+                android:textColor="@color/color_font_black_61"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_03_21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_03_2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="@string/str_myteam02_08"
+                android:textColor="@color/color_font_black_00"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_03_22"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/bg_btn_00194"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_marginVertical="15dp"
+            android:background="@color/color_font_my_team_view"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_03_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="@string/str_myteam02_07"
+                android:textColor="@color/color_font_black_61"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_03_31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_03_3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="(Rs)"
+                android:textColor="@color/color_font_black_00"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_03_32"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/bg_btn_00195"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

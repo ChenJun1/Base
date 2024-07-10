@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home"
+    android:paddingHorizontal="18dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pk_login">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="18dp"
+        android:src="@drawable/icon_login" />
+
+
+    <LinearLayout
+        android:layout_above="@+id/code"
+        android:id="@+id/ll_login"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <LinearLayout
+            android:background="@drawable/bg_pic_radius1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_country"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:enabled="false"
+                android:text="+91"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <EditText
+                android:layout_gravity="center_vertical"
+                android:id="@+id/tv_pone"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_pic_radius1"
+                android:hint="@string/str_hime_login_1"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:textColor="#333333"
+                android:textCursorDrawable="@drawable/my_cursor"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_get"
+            android:layout_marginLeft="18dp"
+            android:paddingHorizontal="5dp"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="@color/color_pic_text1"
+            android:gravity="center"
+            android:background="@drawable/bg_pic_radius1"
+            android:layout_alignBottom="@+id/tv_pone"
+            android:layout_toRightOf="@+id/tv_pone"
+            android:text="Get CAPTCHA"
+            android:layout_width="100dp"
+            android:layout_height="48dp"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_centerVertical="true"
+        android:layout_marginTop="18dp"
+        android:id="@+id/code"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_pic_radius1"
+        android:hint="@string/str_him_login_4"
+        android:gravity="center_vertical"
+        android:inputType="text"
+        android:maxLength="30"
+        android:textColor="#333333"
+        android:textCursorDrawable="@drawable/my_cursor"
+        android:textSize="16sp" />
+
+    <EditText
+        android:layout_below="@+id/code"
+        android:layout_marginTop="18dp"
+        android:id="@+id/et_invite_code"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/bg_pic_radius1"
+        android:inputType="phone"
+        android:hint="@string/str_him_login_3"
+        android:maxLength="7"
+        android:textColor="#333333"
+        android:textCursorDrawable="@drawable/my_cursor"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_below="@+id/et_invite_code"
+        android:id="@+id/bt_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/bg_btn_pic_001"
+        android:text="@string/str_sign_in"
+        android:textColor="@color/white" />
+
+
+</RelativeLayout>

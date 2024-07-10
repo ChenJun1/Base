@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="language_arrays">
+        <!-- 英语 -->
+        <item>English</item>
+        <item>हिंदी</item>
+    </string-array>
+
+    <string-array name="bank_name">
+        <item>Please click to select a bank</item>
+        <item formatted="false">IDFC</item>
+        <item formatted="false">YESBANK</item>
+        <item formatted="false">RBL</item>
+        <item formatted="false">Canara</item>
+        <item formatted="false">HDFC</item>
+    </string-array>
+
+    <string-array name="mobile_area">
+        <item formatted="false">+</item>
+    </string-array>
+
+</resources>

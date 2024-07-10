@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/ll_1"
+        layout="@layout/include_title_common" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/ll_vip_jine"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/str_vip_rechar_1"
+                    android:textColor="@color/color_font_black_21"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_vpi_mony"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/color_font_black_a9"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_view_line" />
+
+            <include layout="@layout/include_recharge_layout" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_view_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_whatsapp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:visibility="gone"
+                android:paddingLeft="18dp">
+
+                <TextView
+                    android:id="@+id/tv_whatsapp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/str_recharge_03"
+                    android:textColor="@color/color_font_black_21"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_whatsapp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/tv_whatsapp"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="@string/str_recharge_05"
+                    android:maxLength="200"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_view_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_phone"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:visibility="gone"
+                android:paddingLeft="18dp">
+
+                <TextView
+                    android:id="@+id/tv_t2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/str_rechar_3"
+                    android:textColor="@color/color_font_black_21"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_t3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_t2"
+                    android:text="+234"
+                    android:textColor="@color/color_font_black_21"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/tv_t3"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="@string/str_rechar_4"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_view_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_realname"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:visibility="gone"
+                android:paddingLeft="18dp">
+
+                <TextView
+                    android:id="@+id/tv_ti"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/str_rechar_1"
+                    android:textColor="@color/color_font_black_21"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/tv_ti"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="@string/str_rechar_2"
+                    android:maxLength="200"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_view_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_email"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="48dp"
+                android:paddingLeft="18dp">
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/str_rechar_7"
+                    android:textColor="@color/color_font_black_21"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/tv_email"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:maxLength="200"
+                    android:hint="@string/str_rechar_8"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_view_line" />
+
+            <Button
+                android:id="@+id/bt_save_pic"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/shape_white_bg_add_shadow"
+                android:text="@string/str_chongzhi_vip"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:paddingBottom="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_btn_002"
+                android:textColor="@color/color_33c"
+                android:textSize="14sp"
+                android:visibility="gone"
+                android:id="@+id/tv_must_read"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Recharge help" />
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

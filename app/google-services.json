@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "87261024512",
+    "project_id": "happyearn-ad06a",
+    "storage_bucket": "happyearn-ad06a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87261024512:android:0489eb94eefaf2479ca3e5",
+        "android_client_info": {
+          "package_name": "com.mobielwa.diki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "87261024512-s33449tt1u3eeg0gqaf1vaa0j2b14pn1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7OPV1ANifW2M511cnPv62HISwp8SWAVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "87261024512-s33449tt1u3eeg0gqaf1vaa0j2b14pn1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

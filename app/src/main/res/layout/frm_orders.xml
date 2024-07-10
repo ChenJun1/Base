@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8FA"
+    android:orientation="vertical">
+
+
+    <include
+        android:visibility="gone"
+        android:id="@+id/ll_1"
+        layout="@layout/include_order_title2" />
+
+    <!--选项卡-->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@+id/ll_1"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_btn_pic_006"
+        android:padding="1dp"
+        app:tabGravity="fill"
+        app:tabIndicator="@drawable/bg_btn_pic_005"
+        app:tabIndicatorColor="@color/white"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorHeight="32dp"
+        app:tabMaxWidth="0dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/color_pic_text2"
+        app:tabTextAppearance="@style/TabTextAppearance"
+        app:tabTextColor="@color/color_pic_text2" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabLayout"
+        android:layout_marginHorizontal="18dp"
+        android:orientation="vertical">
+
+        <com.mobielwa.diki.widget.MRefreshNormalHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="18dp"
+            android:id="@+id/home_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <include layout="@layout/view_empty1" />
+
+    <com.mobielwa.diki.widget.DragFloatActionButton
+        android:id="@+id/circle_button"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="80dp"
+        android:clickable="true"
+        android:src="@drawable/service" />
+</RelativeLayout>

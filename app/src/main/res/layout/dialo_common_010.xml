@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="390dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/close_btn" />
+
+    <RelativeLayout
+        android:background="@drawable/dialog_bg_001"
+        android:id="@+id/rl_1"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_below="@+id/iv_close">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:textStyle="bold"
+            android:textColor="@color/color_font_black_21"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="@string/str_dialo_common_03" />
+
+        <TextView
+            android:text=""
+            android:textSize="12sp"
+            android:textColor="@color/color_font_black_21"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tv_title"
+            android:id="@+id/tv_content"
+            android:layout_marginRight="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        
+        <View
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/bt_commit"
+            android:background="#4dffffff"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+
+        <Button
+            android:textAllCaps="false"
+            android:layout_marginRight="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/bt_commit"
+            android:textColor="@color/white"
+            android:text="@string/str_dialo_common_04"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_btn_0020"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

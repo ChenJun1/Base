@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+    <com.mutlcolorloadingview.MutlColorLoadingView
+        android:id="@+id/mclv"
+        android:layout_width="120dp"
+        android:layout_height="105dp"
+        android:background="@drawable/bg_logding_"
+        android:padding="28dp"
+        app:mclv_duration="2000"
+        app:mclv_first_color="#FFFFFFFF"
+        app:mclv_second_color="#FF4D6BFF"
+        app:mclv_three_color="#FFFF8400"
+        app:mclv_stroke_width="4dp"
+        />
+</LinearLayout>
+

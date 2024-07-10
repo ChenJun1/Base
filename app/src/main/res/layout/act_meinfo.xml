@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8FA"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_mine02"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/colorPrimaryDark">
+
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/iv_mein01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:src="@drawable/icon_top01" />
+
+                <TextView
+                    android:text="账号："
+                    android:layout_marginLeft="40dp"
+                    android:id="@+id/tv_acc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/iv_mein01"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="18dp"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:text="11111"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_acc"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="18dp"
+                    android:textColor="@color/white" />
+
+
+                <TextView
+                    android:layout_toStartOf="@+id/tv_call"
+                    android:text="下载连接"
+                    android:id="@+id/tv_download"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:textColor="@color/white" />
+
+
+                <TextView
+                    android:layout_marginEnd="18dp"
+                    android:layout_alignParentEnd="true"
+                    android:text="联系我们"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/tv_call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

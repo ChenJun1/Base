@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginLeft="9dp"
+    android:layout_width="match_parent"
+    android:layout_marginRight="9dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_bank"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/color_font_black_00"
+                    android:gravity="center_vertical"
+                    android:text="0"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textSize="12sp"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/color_font_black_00"
+                    android:background="@color/color_label02"
+                    android:paddingRight="8dp"
+                    android:paddingLeft="5dp"
+                    android:id="@+id/tv_tag"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_marginBottom="5dp"
+                android:textSize="12sp"
+                android:textColor="@color/color_font_black_9e"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@+id/iv_go"
+            android:id="@+id/tv_money"
+            android:textSize="18sp"
+            android:textColor="#4A4A4A"
+            android:gravity="center_vertical"
+            android:text="0"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+
+        <ImageView
+            android:layout_marginRight="8dp"
+            android:id="@+id/iv_go"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_goto_" />
+    </RelativeLayout>
+    <View
+        android:background="@color/color_view_line2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8FA"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title_common9" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:id="@+id/ll_min3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_min2"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/white_all_bg1_1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/rl_order1"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:paddingHorizontal="8dp">
+
+                <TextView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="111"
+                    android:textColor="@color/color_pic_text2"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_marginTop="18dp"
+                    android:layout_below="@+id/tv_title"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.The recharge address is valid for 30 minutesPlease complete the transfer within 30 minutesafter obtaining the address.If it exceeds 30minutes.please do not transfer to the expireoaddress to avoid trouble."
+                    android:textColor="@color/color_pic_text2"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

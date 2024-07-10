@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_marginTop="1dp"
+    android:paddingLeft="9dp"
+    android:paddingRight="9dp"
+    android:layout_height="60dp">
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginRight="50dp"
+        android:id="@+id/tv_messg_title"
+        android:textColor="@color/color_font_black_00"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginBottom="5dp"
+        android:textSize="12sp"
+        android:textColor="@color/color_font_black_00"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/tv_messg_title"
+        android:id="@+id/tv_time"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+
+        android:id="@+id/iv_go"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icon_goto_" />
+
+    <View
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_view_line2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+</RelativeLayout>

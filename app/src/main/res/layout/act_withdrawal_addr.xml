@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/ll_l1"
+            layout="@layout/include_title_common" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_addr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:textColor="@color/color_font_black_21"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/et_old_addr"
+            android:layout_width="match_parent"
+            android:layout_below="@id/tv_addr"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:gravity="center"
+            android:hint="@string/str_addr_0"
+            android:inputType="text"
+            android:textColor="@color/color_font_black_00"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_addr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_old_addr"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:gravity="center"
+            android:hint="@string/str_addr_1"
+            android:textColor="@color/color_font_black_00"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_addr2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_addr"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:gravity="center"
+            android:hint="@string/str_addr_2"
+            android:textColor="@color/color_font_black_00"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/bt_save_pic"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/et_addr"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/shape_white_bg_add_shadow"
+            android:text="@string/str_look_task_sl"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
