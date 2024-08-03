@@ -6,75 +6,43 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/iv_close"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/close_btn" />
+
 
     <RelativeLayout
-        android:background="@drawable/white_all_bg1"
+        android:background="@drawable/bg_btn_0028"
         android:id="@+id/rl_1"
+        android:paddingVertical="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_close">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tv_title"
             android:textStyle="bold"
             android:textColor="@color/color_font_black_21"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:text="@string/str_dialo_common_07" />
+            android:text="Share QR code" />
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:id="@+id/nsv_msg"
+        <ImageView
+            android:id="@+id/iv_qr"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
             android:layout_below="@+id/tv_title"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="18dp"
-            android:fadeScrollbars="true"
-            android:scrollbars="vertical">
-
-            <TextView
-                android:id="@+id/tv_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text=""
-                android:textColor="@color/color_font_black_21"
-                android:textSize="12sp" />
-
-        </androidx.core.widget.NestedScrollView>
-
-        
-        <View
-            android:layout_marginBottom="5dp"
-            android:layout_above="@+id/bt_commit"
-            android:background="#4dffffff"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"/>
-
-        <Button
-            android:id="@+id/bt_commit"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/nsv_msg"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/bg_btn_0024"
-            android:text="@string/str_dialo_common_08"
-            android:textAllCaps="false"
-            android:textColor="@color/white" />
-
+            android:src="@drawable/qr_code"
+            android:layout_width="120dp"
+            android:layout_height="120dp"/>
+        <TextView
+            android:layout_marginTop="18dp"
+            android:layout_below="@+id/iv_qr"
+            android:textColor="@color/color_font_black_21"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Scan the QR code using your browser" />
 
     </RelativeLayout>
 

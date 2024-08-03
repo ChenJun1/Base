@@ -146,7 +146,7 @@
             android:layout_below="@+id/et_otp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="140dp"
-            android:background="@drawable/shape_white_bg_add_shadow"
+            android:background="@drawable/bg_btn_0026"
             android:text="@string/str_pass3"
             android:textAllCaps="false"
             android:textColor="@color/white" />

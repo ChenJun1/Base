@@ -18,7 +18,7 @@
         android:layout_below="@+id/status_bar_view"
         android:orientation="vertical">
 
-        <com.mobielwa.diki.widget.MRefreshNormalHeader
+        <com.base.kiap.widget.MRefreshNormalHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -479,7 +479,7 @@
 
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
-    <com.mobielwa.diki.widget.DragFloatActionButton
+    <com.base.kiap.widget.DragFloatActionButton
         android:id="@+id/circle_button"
         android:layout_width="82dp"
         android:layout_height="82dp"

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/include_title_common8" android:id="@+id/title"/>
+
+    <!--选项卡-->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/inbox_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@+id/title"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_btn_pic_006"
+        android:padding="1dp"
+        app:tabGravity="fill"
+        app:tabIndicator="@drawable/bg_btn_pic_005"
+        app:tabIndicatorColor="@color/white"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorHeight="32dp"
+        app:tabMaxWidth="0dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/color_pic_text2"
+        app:tabTextAppearance="@style/TabTextAppearance"
+        app:tabTextColor="@color/color_pic_text2" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_below="@+id/inbox_tabLayout"
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:orientation="vertical">
+
+        <com.base.kiap.widget.MRefreshNormalHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <include layout="@layout/view_empty1" />
+
+</RelativeLayout>

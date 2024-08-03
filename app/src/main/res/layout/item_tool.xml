@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="18dp"
+        android:paddingVertical="18dp"
+        android:background="@drawable/bg_btn_0029"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tv_pay01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Airtel"
+            android:textColor="@color/color_pic_text2"
+            android:textSize="@dimen/text_item_16" />
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_recharge" />
+    </RelativeLayout>
+
+</LinearLayout>

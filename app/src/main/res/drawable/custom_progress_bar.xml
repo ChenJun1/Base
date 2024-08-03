@@ -1,0 +1,18 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 背景条 -->
+    <item android:id="@android:id/background">
+        <shape>
+            <corners android:radius="8dp"/> <!-- 圆角半径 -->
+            <solid android:color="@color/base_main3"/> <!-- 背景色 -->
+        </shape>
+    </item>
+    <!-- 进度条 -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <corners android:radius="8dp"/> <!-- 圆角半径，与背景一致 -->
+                <solid android:color="@color/base_main5"/> <!-- 进度条颜色 -->
+            </shape>
+        </clip>
+    </item>
+</layer-list>

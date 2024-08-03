@@ -122,7 +122,7 @@
                 android:layout_centerInParent="true"
                 android:layout_weight="1">
 
-                <com.mobielwa.diki.mvp.iview.MatchWImage
+                <com.base.kiap.mvp.iview.MatchWImage
                     android:id="@+id/iv_qrcode"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"

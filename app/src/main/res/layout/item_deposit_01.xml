@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:paddingHorizontal="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:id="@+id/iv_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="18dp"
+            android:src="@drawable/lubi" />
+
+        <TextView
+            android:id="@+id/tv_inr_numb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iv_icon"
+            android:text="0.00 INR"
+            android:textColor="@color/base_text_bla"
+            android:textSize="@dimen/text_item_16"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_below="@+id/tv_inr_numb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iv_icon"
+            android:background="@drawable/bg_btn_031"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"
+            android:text="BANK"
+            android:textColor="@color/base_main7"
+            android:textSize="@dimen/text_min2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/bg_btn_0026"
+            android:paddingHorizontal="18dp"
+            android:gravity="center"
+            android:text="Buy"
+            android:textStyle="bold"
+            android:textColor="@color/base_main_ff"
+            android:textSize="@dimen/text_nom" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:paddingHorizontal="18dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_weight="7"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Income"
+                android:textColor="@color/base_main7"
+                android:textSize="@dimen/text_nom" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="6dp"
+                    android:text="₹ 24.76"
+                    android:textColor="@color/base_text_bla"
+                    android:textSize="@dimen/text_item_16" />
+
+                <TextView
+                    android:layout_toEndOf="@+id/tv_income"
+                    android:layout_alignBottom="@+id/tv_income"
+                    android:id="@+id/tv_income_ra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="6dp"
+                    android:text="(2%)+4.95(Activity)"
+                    android:textColor="@color/base_text_bla"
+                    android:textSize="@dimen/text_item_16" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quota"
+                android:textColor="@color/base_main7"
+                android:textSize="@dimen/text_item_16" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_quota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="6dp"
+                    android:text="+ 1013.76"
+                    android:textColor="@color/base_text_bla"
+                    android:textSize="@dimen/text_item_16" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/base_main_view"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+
+</LinearLayout>

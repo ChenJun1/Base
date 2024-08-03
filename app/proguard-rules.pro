@@ -80,9 +80,9 @@
 }
 
 #bean widget utils类不被混淆
--keep public class com.mobielwa.diki.bean.**{*;}
--keep public class com.mobielwa.diki.utlis.**{*;}
--keep public class com.mobielwa.diki.widget.**{*;}
+-keep public class com.base.kiap.bean.**{*;}
+-keep public class com.base.kiap.utlis.**{*;}
+-keep public class com.base.kiap.widget.**{*;}
 
 # 沉浸式状态栏
 -dontwarn com.gyf.immersionbar.**
@@ -182,7 +182,7 @@ public static java.lang.String TABLENAME;
 -keep class a.** {*;}
 -keep class com.vivo.** {*;}
 
--keep public class com.mobielwa.diki.R$*{
+-keep public class com.base.kiap.R$*{
 public static final int *;
 }
 
@@ -191,5 +191,5 @@ public static final int *;
     *;
 }
 -dontwarn com.just.agentweb.**
--keep class com.mobielwa.diki.tool.AndroidInterface {*;}
+-keep class com.base.kiap.tool.AndroidInterface {*;}
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.mobielwa.diki">
+    package="com.base.kiap">
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -12,13 +12,10 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" /><!--适配android 11 获取包信息-->
     <uses-permission
@@ -27,12 +24,12 @@
 
 
     <application
-        android:name=".APP"
+        android:name="com.base.kiap.APP"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/ic_launcher"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="false"
         tools:replace="android:supportsRtl"
         android:theme="@style/AppTheme"
@@ -78,7 +75,8 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".activity.hkk.LauncherActivity" >
+        <activity android:name=".activity.basea.BaseLoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -86,9 +84,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.hkk.MainActivity"
+            android:name="com.base.kiap.activity.basea.MainActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -100,46 +99,81 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.hkk.MeInfoActivity"
+            android:name="com.base.kiap.activity.hkk.MeInfoActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.CashRecordActivity"
+            android:name="com.base.kiap.activity.CashRecordActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ExtractRecordActivity"
+            android:name="com.base.kiap.activity.ExtractRecordActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name="com.base.kiap.activity.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.RechargeActivity"
+            android:name="com.base.kiap.activity.RechargeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ExtractActivity"
+            android:name="com.base.kiap.activity.ExtractActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.SettingPassActivity"
+            android:name="com.base.kiap.activity.SettingPassActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.WebActivity"
+            android:name="com.base.kiap.activity.WebActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.WebActivity2"
+            android:name="com.base.kiap.activity.WebActivity2"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.MessgListActivity"
+        <activity android:name="com.base.kiap.activity.MessgListActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activity.MessgDetailActivity"
+        <activity android:name="com.base.kiap.activity.MessgDetailActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activity.FAQActivity" />
-        <activity android:name=".activity.FaqDetailActivity" />
-        <activity android:name=".activity.RechargeUsdtActivity" />
-        <activity android:name=".activity.MemeberListActivity" />
-        <activity android:name=".activity.ExchangeDetailActivity" />
-        <activity android:name=".activity.ExtractUsdtActivity" />
-        <activity android:name=".activity.HelpActivity" />
-        <activity android:name=".activity.HelpDetailActivity" />
-        <activity android:name=".activity.TeamDetailActivity" />
-        <activity android:name=".activity.TeamActivity" />
+        <activity android:name="com.base.kiap.activity.FAQActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.base.kiap.activity.FaqDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.base.kiap.activity.RechargeUsdtActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.base.kiap.activity.MemeberListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.base.kiap.activity.ExchangeDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.base.kiap.activity.ExtractUsdtActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.base.kiap.activity.HelpActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.base.kiap.activity.HelpDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.base.kiap.activity.TeamDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.base.kiap.activity.TeamActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.basea.UserInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.basea.QuotaHistoryActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.basea.DepositHistoryActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.basea.WithdrawHistoryActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.basea.InBoxActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.basea.BaseTeamDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.basea.AddBankActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.basea.AddToolActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.basea.BasePassActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.basea.ServiceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.basea.BasePinCodeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.basea.AddToolSetpActivity"
+            android:screenOrientation="portrait"/>
+<!--        <activity android:name=".activity.basea.BaseLoginActivity" />-->
     </application>
 
 </manifest>

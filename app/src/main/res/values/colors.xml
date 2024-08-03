@@ -14,7 +14,7 @@
     <color name="color_fb">#ffd317</color>
     <color name="color_69">#0A0A0B</color>
     <color name="color_bd">#bdbdbd</color>
-    <color name="color_33c">#FF433C</color>
+    <color name="color_33c">#C3C3C3</color>
     <color name="color_0606">#690606</color>
     <color name="color_32ff">#2C8DCA</color>
     <color name="color_da">#DADADA</color>
@@ -68,7 +68,29 @@
 
     <color name="color_pic_text1">#27AE60</color>
     <color name="color_pic_text2">#1D2129</color>
-    <color name="color_pic_text3">#4E5969</color>
+    <color name="color_pic_text3">#F6F6F6</color>
     <color name="color_pic_text4">#00449F</color>
     <color name="color_pic_text5">#F2F3F5</color>
+
+
+    <color name="base_main">#004e98</color>
+    <color name="base_main_text">#007ACC</color>
+    <color name="base_main_text_bright">#3EA6FF</color>
+    <color name="base_text_bla">#000000</color>
+    <color name="base_main2">#3a6ea5</color>
+    <color name="base_main89">#FF72ACEA</color>
+    <color name="base_main3">#c0c0c0</color>
+    <color name="base_main4">#ebebeb</color>
+    <color name="base_main5">#ff6700</color>
+    <color name="base_main6">#28a745</color>
+    <color name="base_main7">#86909C</color>
+    <color name="base_main_view">#D4D4D4</color>
+    <color name="base_main_ff">#FFFFFF</color>
+    <color name="base_text_bla2">#1D2129</color>
+    <color name="base_text_bal3">#86909C</color>
+    <color name="base_bg_color">#F7F8FA</color>
+    <color name="base_text_color">#8a8a8a</color>
+    <color name="base_view_color">#bfbfbf</color>
+    <color name="base_text_bg_color">#F2F2F2</color>
+
 </resources>

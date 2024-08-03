@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:paddingHorizontal="18dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <LinearLayout
+                android:id="@+id/ll_setp1"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/icon_phone1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/base_main_text_bright"
+                    android:text="Phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <View
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/ll_setp2"
+                android:layout_toEndOf="@+id/ll_setp1"
+                android:layout_marginHorizontal="18dp"
+                android:background="@color/base_view_color"
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_setp2"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/icon_phone2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/base_view_color"
+                    android:text="Authorize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <View
+                android:layout_toStartOf="@+id/ll_setp3"
+                android:layout_toEndOf="@+id/ll_setp2"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="18dp"
+                android:background="@color/base_view_color"
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"/>
+
+            <LinearLayout
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/ll_setp3"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/icon_phone3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/base_view_color"
+                    android:text="Finish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="18dp"
+            android:textSize="@dimen/text_title_24"
+            android:textStyle="bold"
+            android:textColor="@color/base_text_bla2"
+            android:text="Authorize PhonePe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="18dp"
+            android:textSize="@dimen/text_item_16"
+            android:textColor="@color/base_text_bal3"
+            android:text="Let us enjoy the work"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="@dimen/text_item_16"
+            android:textColor="@color/base_text_bal3"
+            android:text="1. Enter your PhonePe number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="@dimen/text_item_16"
+            android:textColor="@color/base_text_bal3"
+            android:text="2. Click the 'Next' button to proceed."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:id="@+id/tv_phone1"
+            android:text="Phone"
+            android:textColor="@color/base_text_bal3"
+            android:textSize="@dimen/text_title_18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:inputType="number"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:textColor="@color/color_font_black_00"
+            android:textSize="@dimen/text_item_16" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:id="@+id/tv_pin1"
+            android:text="Pin"
+            android:textColor="@color/base_text_bal3"
+            android:textSize="@dimen/text_title_18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <EditText
+            android:id="@+id/et_pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:inputType="number"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:textColor="@color/color_font_black_00"
+            android:textSize="@dimen/text_item_16" />
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <Button
+        android:layout_marginBottom="8dp"
+        android:layout_marginHorizontal="18dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bt_next"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/bg_btn_0026"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

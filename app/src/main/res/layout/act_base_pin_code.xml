@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8FA">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/ll_l1"
+            layout="@layout/include_title_common9" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_l1"
+            android:layout_marginTop="30dp"
+            android:paddingHorizontal="18dp">
+
+
+            <TextView
+                android:id="@+id/tv_pay01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pin"
+                android:textColor="@color/color_pic_text2"
+                android:textSize="14sp" />
+
+>
+            <EditText
+                android:id="@+id/et_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pay01"
+                android:layout_centerHorizontal="true"
+                android:inputType="numberPassword"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:textColor="@color/color_font_black_00"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_pay02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_pass"
+                android:layout_marginTop="10dp"
+                android:text="Confirm Pin"
+                android:textColor="@color/color_pic_text2"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_pass2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pay02"
+                android:layout_centerHorizontal="true"
+                android:inputType="numberPassword"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:textColor="@color/color_font_black_00"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_pay03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_pass2"
+                android:layout_marginTop="10dp"
+                android:text="OTP"
+                android:textColor="@color/color_pic_text2"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pay03"
+                android:layout_centerHorizontal="true"
+                android:inputType="numberPassword"
+                android:maxLength="18"
+                android:maxLines="1"
+                android:textColor="@color/color_font_black_00"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/bt_save_pic"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/et_number"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="140dp"
+                android:background="@drawable/bg_btn_0026"
+                android:text="@string/str_pass3"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

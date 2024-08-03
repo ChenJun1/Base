@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PickEX</string>
+    <string name="app_name">BaseApp</string>
     <!--刷新-->
     <string name="pull_down_refresh">Slide down to refresh</string>
     <string name="release_refresh">Release the refresh immediately</string>

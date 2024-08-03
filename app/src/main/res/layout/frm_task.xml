@@ -24,7 +24,7 @@
         app:tabSelectedTextColor="@color/white_fa"
         app:tabTextColor="@color/black" />
 
-    <com.mobielwa.diki.widget.CustomViewPager
+    <com.base.kiap.widget.CustomViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"

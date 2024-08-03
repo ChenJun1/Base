@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_color">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/ll_l1"
+            layout="@layout/include_title_common9" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_l1"
+            android:layout_marginTop="30dp"
+            android:paddingHorizontal="18dp">
+
+
+            <TextView
+                android:id="@+id/tv_pay01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You Name"
+                android:textColor="@color/color_pic_text2"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pay01"
+                android:layout_centerHorizontal="true"
+                android:hint="Enter your name"
+                android:inputType="numberPassword"
+                android:maxLength="18"
+                android:maxLines="1"
+                android:textColor="@color/base_text_bla"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_pay02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_pass"
+                android:layout_marginTop="10dp"
+                android:text="Bank Name"
+                android:textColor="@color/color_pic_text2"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_pass2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pay02"
+                android:layout_centerHorizontal="true"
+                android:hint="Enter your bank name"
+                android:inputType="numberPassword"
+                android:maxLength="18"
+                android:maxLines="1"
+                android:textColor="@color/base_text_bla"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_pay03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_pass2"
+                android:layout_marginTop="10dp"
+                android:text="Bank number"
+                android:textColor="@color/color_pic_text2"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pay03"
+                android:layout_centerHorizontal="true"
+                android:hint="Enter your bank account"
+                android:inputType="numberPassword"
+                android:maxLength="18"
+                android:maxLines="1"
+                android:textColor="@color/color_font_black_00"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_pay04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_number"
+                android:layout_marginTop="10dp"
+                android:text="IFSC"
+                android:textColor="@color/color_pic_text2"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pay04"
+                android:layout_centerHorizontal="true"
+                android:hint="Enter ifsc with a length of 11 digits"
+                android:inputType="numberPassword"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:textColor="@color/color_font_black_00"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_pay05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_otp"
+                android:layout_marginTop="10dp"
+                android:text="Pin"
+                android:textColor="@color/color_pic_text2"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_pin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pay05"
+                android:layout_centerHorizontal="true"
+                android:inputType="numberPassword"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:textColor="@color/color_font_black_00"
+                android:textSize="14sp" />
+
+
+            <Button
+                android:id="@+id/bt_save_pic"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/et_otp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="140dp"
+                android:background="@drawable/shape_white_bg_add_shadow"
+                android:text="@string/str_pass3"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bt_save_pic"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="18dp"
+                android:text="Notice:"
+                android:textColor="@color/base_text_bla"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_notice"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:text="@string/str_pass4"
+                android:textColor="@color/tw__composer_red"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

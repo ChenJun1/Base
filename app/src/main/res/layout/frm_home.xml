@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/base_bg_color"
     android:orientation="vertical">
 
     <View
         android:id="@+id/status_bar_view"
-        android:background="@color/color_font_black_21"
         android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+        android:layout_height="0dp"
+        android:background="@color/base_text_bal3"/>
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/refreshLayout"
@@ -18,7 +20,7 @@
         android:layout_below="@+id/status_bar_view"
         android:orientation="vertical">
 
-        <com.mobielwa.diki.widget.MRefreshNormalHeader
+        <com.base.kiap.widget.MRefreshNormalHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -28,224 +30,103 @@
             android:scrollbars="none">
 
             <LinearLayout
+                android:paddingHorizontal="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="App"
+                    android:textColor="@color/base_main"
+                    android:textSize="@dimen/text_title_22" />
+
+                <com.youth.banner.Banner
+                    app:banner_indicator_normal_color="@color/base_main7"
+                    app:banner_indicator_selected_color="@color/base_main_ff"
+                    app:banner_radius="12dp"
+                    android:background="@null"
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="10dp">
 
                     <ImageView
-                        android:id="@+id/iv_team_t"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="18dp"
-                        android:layout_marginTop="7dp"
-                        android:src="@drawable/gq" />
+                        android:id="@+id/imageView"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/icon_notice" />
 
                     <TextView
-                        android:id="@+id/tv_language"
+                        android:id="@+id/tv_notify"
                         android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_alignParentRight="true"
-                        android:padding="8dp"
-                        android:gravity="center"
-                        android:text="@string/str_index_language"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/imageView"
+                        android:text="notice"
+                        android:textColor="@color/base_main5"
+                        android:textSize="@dimen/text_min2" />
                 </RelativeLayout>
-
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="5dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/white_all_bg1">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:orientation="horizontal">
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginLeft="18dp"
-                                android:layout_marginTop="7dp"
-                                android:background="@drawable/bg_btn_0019"
-                                android:padding="10dp"
-                                android:src="@drawable/wl" />
-
-
-                            <RelativeLayout
-                                android:id="@+id/rl_recharge"
-                                android:layout_width="wrap_content"
-                                android:layout_height="30dp"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/bg_btn_0019"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginTop="6dp"
-                                    android:src="@drawable/wl" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="30dp"
-                                    android:layout_marginLeft="15dp"
-                                    android:gravity="center"
-                                    android:paddingLeft="20dp"
-                                    android:paddingRight="10dp"
-                                    android:paddingBottom="2dp"
-                                    android:text="@string/str_home_deposit"
-                                    android:textColor="@color/white"
-                                    android:textSize="12sp" />
-                            </RelativeLayout>
-                        </RelativeLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_marginStart="3dp"
-                            android:textSize="14sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:text="@string/str_home_content1"
-                            android:textColor="@color/white" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_marginStart="3dp"
-                            android:textSize="20sp"
-                            android:id="@+id/tv_home_balance"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0.0"
-                            android:textStyle="bold"
-                            android:textColor="@color/white" />
-                        <TextView
-                            android:layout_marginStart="3dp"
-                            android:textSize="16sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" ≈ "
-                            android:textColor="@color/white" />
-                        <TextView
-                            android:layout_marginStart="3dp"
-                            android:textSize="16sp"
-                            android:id="@+id/tv_home_balance1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0.0 INR"
-                            android:textColor="@color/white" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
 
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
+                    android:layout_marginTop="10dp">
 
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/tv_l1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal">
+                        android:layout_centerVertical="true"
+                        android:text="Recharge amount:"
+                        android:textColor="@color/base_text_bla"
+                        android:textSize="@dimen/text_title_18"
+                        android:textStyle="bold" />
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:padding="10dp"
-                            android:src="@drawable/w9" />
-                        <TextView
-                            android:layout_marginStart="3dp"
-                            android:textSize="14sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:text="@string/str_home_content2"
-                            android:textColor="@color/black" />
-                        <TextView
-                            android:id="@+id/tv_usdt_price"
-                            android:layout_marginStart="3dp"
-                            android:textSize="14sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" 0.00 INR"
-                            android:textStyle="bold"
-                            android:textColor="@color/black" />
-
-                    </LinearLayout>
-
-                    <RelativeLayout
-                        android:id="@+id/tv_share12"
+                    <TextView
+                        android:id="@+id/tv_amount"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_btn_0019"
-                        android:orientation="vertical">
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/tv_l1"
+                        android:text="0"
+                        android:textColor="@color/base_text_bla"
+                        android:textSize="@dimen/text_title_18"
+                        android:textStyle="bold" />
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="6dp"
-                            android:src="@drawable/t2" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toStartOf="@+id/l_day"
+                        android:text="4"
+                        android:textColor="@color/base_text_bla"
+                        android:textSize="@dimen/text_title_18"
+                        android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="15dp"
-                            android:gravity="center"
-                            android:paddingLeft="30dp"
-                            android:paddingRight="10dp"
-                            android:paddingBottom="2dp"
-                            android:text="@string/str_home_content3"
-                            android:textColor="@color/white"
-                            android:textSize="12sp" />
-                    </RelativeLayout>
-
+                    <TextView
+                        android:id="@+id/l_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:text="Day"
+                        android:textColor="@color/base_text_bla"
+                        android:textSize="@dimen/text_title_18"
+                        android:textStyle="bold" />
                 </RelativeLayout>
 
                 <LinearLayout
@@ -258,109 +139,387 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/bg_btn_004"
+                        android:gravity="center_horizontal"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:paddingTop="5dp"
-                            android:paddingBottom="5dp"
-                            android:text="@string/str_home_content4"
-                            android:textColor="@color/color_font_black_31"
-                            android:textSize="12sp"/>
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/dark_coin" />
 
                         <TextView
-                            android:id="@+id/tv_wazir_price"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:paddingTop="5dp"
-                            android:paddingBottom="5dp"
-                            android:text="≈ 0.00 INR"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            android:gravity="center_horizontal"
+                            android:text="100"
+                            android:textColor="@color/base_main5"
+                            android:textSize="@dimen/text_nom" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/bg_btn_004"
+                        android:gravity="center_horizontal"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:paddingTop="5dp"
-                            android:paddingBottom="5dp"
-                            android:text="@string/str_home_content5"
-                            android:textColor="@color/color_font_black_31"
-                            android:textSize="12sp"/>
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/dark_coin" />
 
                         <TextView
-                            android:id="@+id/tv_binance_price"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:paddingTop="5dp"
-                            android:paddingBottom="5dp"
-                            android:text="≈ 0.00 INR"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            android:gravity="center_horizontal"
+                            android:text="300"
+                            android:textColor="@color/base_main5"
+                            android:textSize="@dimen/text_nom" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/bg_btn_004"
+                        android:gravity="center_horizontal"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:paddingTop="5dp"
-                            android:paddingBottom="5dp"
-                            android:text="@string/str_home_content6"
-                            android:textColor="@color/color_font_black_31"
-                            android:textSize="12sp"/>
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/dark_coin" />
 
                         <TextView
-                            android:id="@+id/tv_kucoin_price"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:paddingTop="5dp"
-                            android:paddingBottom="5dp"
-                            android:text="≈ 0.00 INR"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            android:gravity="center_horizontal"
+                            android:text="800"
+                            android:textColor="@color/base_main5"
+                            android:textSize="@dimen/text_nom" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/dark_coin" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="2000"
+                            android:textColor="@color/base_main5"
+                            android:textSize="@dimen/text_nom" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/dark_coin" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="4200"
+                            android:textColor="@color/base_main5"
+                            android:textSize="@dimen/text_nom" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:progress="50"
+                    android:max="100"
+                    style="@style/RoundedProgressBar"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="50k"
+                        android:textColor="@color/base_main7"
+                        android:textSize="@dimen/text_nom" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="100k"
+                        android:textColor="@color/base_main7"
+                        android:textSize="@dimen/text_nom" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="200k"
+                        android:textColor="@color/base_main7"
+                        android:textSize="@dimen/text_nom" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="500k"
+                        android:textColor="@color/base_main7"
+                        android:textSize="@dimen/text_nom" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="1m"
+                        android:textColor="@color/base_main7"
+                        android:textSize="@dimen/text_nom" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_l2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Withdraw"
+                        android:textColor="@color/base_text_bla"
+                        android:textSize="@dimen/text_title_18"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/tv_l2"
+                        android:text=" (Opening)"
+                        android:textColor="@color/base_text_bla"
+                        android:textSize="@dimen/text_nom"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_sw"
+                        android:src="@drawable/icon_guan"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/base_icon_time1" />
+
+                        <LinearLayout
+                            android:layout_marginStart="5dp"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="0"
+                                android:textColor="@color/base_text_bla"
+                                android:textSize="@dimen/text_item_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="In transaction"
+                                android:textColor="@color/base_main7"
+                                android:textSize="@dimen/text_nom" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/base_icon_time2" />
+
+                        <LinearLayout
+                            android:layout_marginStart="5dp"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="0"
+                                android:textColor="@color/base_text_bla"
+                                android:textSize="@dimen/text_item_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="Today Withdraw"
+                                android:textColor="@color/base_main7"
+                                android:textSize="@dimen/text_nom" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/home_rv"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_marginTop="15dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_l3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="In Withdraw UPI Tools:"
+                        android:textColor="@color/base_main7"
+                        android:textSize="@dimen/text_item_16" />
+
+                    <TextView
+                        android:id="@+id/tv_upi_tools"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/tv_l3"
+                        android:text="0"
+                        android:textColor="@color/base_main7"
+                        android:textSize="@dimen/text_item_16"/>
 
 
-                <include layout="@layout/view_empty1" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:text="Manage UPI Tool"
+                        android:textColor="@color/base_main7"
+                        android:textSize="@dimen/text_item_16" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_l4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="In Withdraw Bank Tools:"
+                        android:textColor="@color/base_main7"
+                        android:textSize="@dimen/text_item_16" />
+
+                    <TextView
+                        android:id="@+id/tv_bank_tools"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/tv_l4"
+                        android:text="0"
+                        android:textColor="@color/base_main7"
+                        android:textSize="@dimen/text_item_16"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:text="Manage Bank Tool"
+                        android:textColor="@color/base_main7"
+                        android:textSize="@dimen/text_item_16" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_marginTop="20dp"
+                    android:background="@color/base_main7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.5dp"/>
+
             </LinearLayout>
+
+
         </ScrollView>
 
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>

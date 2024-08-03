@@ -7,5 +7,14 @@
     <dimen name="lucky_makemoney_tv_size">16sp</dimen>
     <dimen name="invitation_rules_tv_size">16sp</dimen>
 
+    <dimen name="text_title_26">26sp</dimen>
+    <dimen name="text_title_24">22sp</dimen>
+    <dimen name="text_title_22">18sp</dimen>
+    <dimen name="text_title_18">16sp</dimen>
+    <dimen name="text_item_16">14sp</dimen>
+    <dimen name="text_nom">12sp</dimen>
+    <dimen name="text_min2">10sp</dimen>
+    <dimen name="img_icon_size">48dp</dimen>
+
 
 </resources>

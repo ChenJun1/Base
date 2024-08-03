@@ -15,7 +15,7 @@
         android:layout_marginRight="9dp"
         android:orientation="vertical">
 
-        <com.mobielwa.diki.widget.MRefreshNormalHeader
+        <com.base.kiap.widget.MRefreshNormalHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

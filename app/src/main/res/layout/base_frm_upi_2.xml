@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:paddingHorizontal="18dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <LinearLayout
+                android:id="@+id/ll_setp1"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/icon_phone1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/base_main_text_bright"
+                    android:text="Phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <View
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/ll_setp2"
+                android:layout_toEndOf="@+id/ll_setp1"
+                android:layout_marginHorizontal="18dp"
+                android:background="@color/base_main_text_bright"
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_setp2"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/icon_phone2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/base_main_text_bright"
+                    android:text="Authorize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <View
+                android:layout_toStartOf="@+id/ll_setp3"
+                android:layout_toEndOf="@+id/ll_setp2"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="18dp"
+                android:background="@color/base_view_color"
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"/>
+
+            <LinearLayout
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/ll_setp3"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/icon_phone3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/base_view_color"
+                    android:text="Finish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="18dp"
+            android:textSize="@dimen/text_title_24"
+            android:textStyle="bold"
+            android:textColor="@color/base_text_bla2"
+            android:text="Please Enter Your OTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="18dp"
+            android:textSize="@dimen/text_item_16"
+            android:textColor="@color/base_text_bal3"
+            android:text="1. Please click the 'Send OTP' button to receive your OTP."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="@dimen/text_item_16"
+            android:textColor="@color/base_text_bal3"
+            android:text="2. We've sent you a One-Time Password (OTP).
+Please check your messages and enter the OTP below to proceed. If you have any questions, we're here to help!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="@dimen/text_item_16"
+            android:textColor="@color/base_text_bal3"
+            android:text="3. Click the 'Next button to proceed."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+        <LinearLayout
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_btn_0027"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:paddingStart="8dp"
+                android:layout_gravity="center_vertical"
+                android:text="Phone"
+                android:textColor="@color/base_text_bla2"
+                android:textSize="@dimen/text_title_18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:layout_marginStart="18dp"
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:inputType="phone"
+                android:background="@null"
+                android:maxLength="12"
+                android:maxLines="1"
+                android:textColor="@color/base_text_bla2"
+                android:textSize="@dimen/text_item_16" />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_btn_0027"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <EditText
+            android:id="@+id/et_pin"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:inputType="number"
+            android:background="@null"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:textColor="@color/base_text_bla2"
+            android:textSize="@dimen/text_item_16" />
+
+        <TextView
+            android:background="@drawable/bg_btn_0036"
+            android:paddingHorizontal="10dp"
+            android:text="send"
+            android:textColor="@color/base_text_bla2"
+            android:gravity="center"
+            android:layout_gravity="end|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginHorizontal="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <Button
+            android:id="@+id/bt_previous"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_btn_0034"
+            android:text="Previous"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/bt_next"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_btn_0035"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

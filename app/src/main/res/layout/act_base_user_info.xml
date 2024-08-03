@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_color"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title_common8" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/base_main_view" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:id="@+id/ll_min3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_min2"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="18dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:layout_marginEnd="18dp"
+                    android:id="@+id/iv_mein01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_top01" />
+
+
+                <TextView
+                    android:drawableRight="@drawable/icon_pic_copy2"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/iv_mein01"
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WP1693562492549"
+                    android:textColor="@color/base_text_bla"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/iv_mein01"
+                    android:layout_below="@+id/tv_content"
+                    android:drawableRight="@drawable/icon_pic_copy2"
+                    android:id="@+id/tv_content2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID: 47987284234"
+                    android:textColor="@color/base_text_bal3"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:id="@+id/rl_help1"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:paddingHorizontal="8dp">
+
+
+                <TextView
+                    android:id="@+id/tv_box_time2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Phone"
+                    android:textColor="@color/base_text_bla2"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/im_01"
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="9239489334"
+                    android:textColor="@color/base_main7"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/im_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_pic_min06" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_help2"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:paddingHorizontal="8dp">
+
+                <TextView
+                    android:id="@+id/tv_box_time34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="ID"
+                    android:textColor="@color/base_text_bla2"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/im_02"
+                    android:id="@+id/tv_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="7239489334"
+                    android:textColor="@color/base_main7"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/im_02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_pic_min06" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_help3"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:paddingHorizontal="8dp">
+
+
+                <TextView
+                    android:id="@+id/tv_box_time23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="E-mail"
+                    android:textColor="@color/base_text_bla2"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/im_email"
+                    android:id="@+id/tv_eamil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="2384848@email"
+                    android:textColor="@color/base_main7"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/im_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_pic_min06" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_help4"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:paddingHorizontal="8dp">
+
+                <TextView
+                    android:id="@+id/tv_box_time24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Telegram"
+                    android:textColor="@color/base_text_bla2"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/im_teg"
+                    android:id="@+id/tv_telegram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="sdemail"
+                    android:textColor="@color/base_main_text_bright"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/im_teg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_pic_min06" />
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:orientation="vertical">
 
-    <com.mobielwa.diki.widget.CustomViewPager
+    <com.base.kiap.widget.CustomViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -38,13 +38,13 @@
                 android:button="@null"
                 android:checked="true"
                 android:gravity="center"
-                android:text="@string/str_rd_home"
+                android:text="Home"
                 android:drawableTop="@drawable/selector_main_bottom1"
                 android:textColor="@drawable/selector_main_mine_top"
                 android:textSize="12sp" />
 
             <RadioButton
-                android:text="@string/str_rd_order"
+                android:text="Deposit"
                 android:id="@+id/main_home_rb_2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -57,7 +57,31 @@
                 android:textSize="12sp" />
 
             <RadioButton
-                android:text="@string/str_rd_mine"
+                android:text="Tool"
+                android:id="@+id/main_home_rb_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@drawable/selector_main_bottom3"
+                android:textColor="@drawable/selector_main_mine_top"
+                android:textSize="12sp" />
+            <RadioButton
+                android:text="Team"
+                android:id="@+id/main_home_rb_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@drawable/selector_main_bottom4"
+                android:textColor="@drawable/selector_main_mine_top"
+                android:textSize="12sp" />
+            <RadioButton
+                android:text="Assets"
                 android:id="@+id/main_home_rb_5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

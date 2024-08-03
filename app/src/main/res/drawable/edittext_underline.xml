@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edittext_underline.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@android:color/transparent" /> <!-- 背景色透明 -->
+    <stroke
+        android:width="1dp" android:color="@color/base_main7" /> <!-- 下划线颜色 -->
+</shape>

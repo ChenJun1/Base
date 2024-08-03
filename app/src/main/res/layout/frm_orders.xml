@@ -41,7 +41,7 @@
         android:layout_marginHorizontal="18dp"
         android:orientation="vertical">
 
-        <com.mobielwa.diki.widget.MRefreshNormalHeader
+        <com.base.kiap.widget.MRefreshNormalHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -55,7 +55,7 @@
 
     <include layout="@layout/view_empty1" />
 
-    <com.mobielwa.diki.widget.DragFloatActionButton
+    <com.base.kiap.widget.DragFloatActionButton
         android:id="@+id/circle_button"
         android:layout_width="82dp"
         android:layout_height="82dp"

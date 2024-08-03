@@ -13,7 +13,7 @@ android {
     aaptOptions.useNewCruncher = false
 
     defaultConfig {
-        applicationId "com.wings.pickwallet"
+        applicationId "com.base.app"
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
         versionCode config.versionCode
@@ -74,9 +74,9 @@ android {
             def fileName="";
             if (outputFile != null && outputFile.name.endsWith('.apk')) {
                 if (variant.buildType.name.equals('release')) {//如果是release包
-                    fileName = "pickWallet.apk"
+                    fileName = "BaseApp.apk"
                 } else if (variant.buildType.name.equals('debug')) {//如果是debug包
-                    fileName = "pickWallet.apk"
+                    fileName = "BaseApp.apk"
                 }
                 outputFileName = fileName
             }
@@ -97,6 +97,9 @@ android {
     lintOptions {
         checkReleaseBuilds false
         abortOnError false
+    }
+    viewBinding {
+        enabled = true
     }
 }
 
