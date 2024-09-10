@@ -3,7 +3,7 @@ package com.base.kiap.adapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.base.kiap.R;
-import com.base.kiap.bean.MemberBean;
+import com.base.kiap.bean.oldbean.MemberBean;
 import com.base.kiap.listen.onItemClickListen4;
 
 /**

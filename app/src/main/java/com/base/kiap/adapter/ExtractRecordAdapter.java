@@ -5,7 +5,7 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.base.kiap.R;
-import com.base.kiap.bean.ExtractRecordBean;
+import com.base.kiap.bean.oldbean.ExtractRecordBean;
 
 /**
  * @Author: June

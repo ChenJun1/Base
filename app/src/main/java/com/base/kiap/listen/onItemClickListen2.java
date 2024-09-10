@@ -2,7 +2,7 @@ package com.base.kiap.listen;
 
 import android.view.View;
 
-import com.base.kiap.bean.TaskOrderBean;
+import com.base.kiap.bean.oldbean.TaskOrderBean;
 
 /**
  * @Author: June

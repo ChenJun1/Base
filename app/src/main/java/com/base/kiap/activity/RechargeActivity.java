@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 
 import com.base.kiap.R;
 import com.base.kiap.base.BaseMvpActivity;
-import com.base.kiap.bean.ApplyBean;
+import com.base.kiap.bean.oldbean.ApplyBean;
 import com.base.kiap.mvp.iview.IRechargeView;
 import com.base.kiap.mvp.presenter.RechargePresenter;
 

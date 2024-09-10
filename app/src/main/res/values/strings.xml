@@ -11,6 +11,7 @@
 
     <string name="refreshing">Refresh</string>
     <string name="str_sign_in">Login</string>
+    <string name="str_register">Register</string>
     <string name="str_rd_home">Home</string>
     <string name="str_rd_order">USDT</string>
     <string name="str_rd_task">Status</string>

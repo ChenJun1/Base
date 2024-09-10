@@ -1,6 +1,6 @@
 package com.base.kiap.config;
 
-import com.base.kiap.bean.ConfigBean;
+import com.base.kiap.bean.oldbean.ConfigBean;
 
 /**
  * @Author: June

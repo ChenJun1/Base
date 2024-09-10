@@ -46,7 +46,7 @@ public class BindUsdtPresenter extends BasePresenter<IBindUsdt> {
                 new ApiCallBack<BaseResult<Object>>() {
                     @Override
                     public void onSuccess(BaseResult<Object> model) {
-                        ToastUtil.success(model.msg);
+                        ToastUtil.success(model.statusInfo);
                         getView().onSuccess();
                     }
 

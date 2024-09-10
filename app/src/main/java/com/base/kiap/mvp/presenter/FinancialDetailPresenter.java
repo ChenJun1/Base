@@ -1,8 +1,8 @@
 package com.base.kiap.mvp.presenter;
 
 import com.base.kiap.base.BasePresenter;
-import com.base.kiap.bean.FinancialOrderBean;
-import com.base.kiap.bean.FinancialSumBean;
+import com.base.kiap.bean.oldbean.FinancialOrderBean;
+import com.base.kiap.bean.oldbean.FinancialSumBean;
 import com.base.kiap.bean.request.BaseResult;
 import com.base.kiap.config.UserHelp;
 import com.base.kiap.https.retrofit.ApiCallBack;

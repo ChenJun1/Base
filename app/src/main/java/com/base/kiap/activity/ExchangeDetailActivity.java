@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.base.kiap.R;
 import com.base.kiap.base.BaseMvpActivity;
 import com.base.kiap.base.BasePresenter;
-import com.base.kiap.bean.OrderBean;
+import com.base.kiap.bean.oldbean.OrderBean;
 
 import butterknife.BindView;
 import butterknife.OnClick;

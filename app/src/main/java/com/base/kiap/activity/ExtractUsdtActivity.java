@@ -17,7 +17,7 @@ import androidx.annotation.Nullable;
 
 import com.base.kiap.R;
 import com.base.kiap.base.BaseMvpActivity;
-import com.base.kiap.bean.PayoutGetBean;
+import com.base.kiap.bean.oldbean.PayoutGetBean;
 import com.base.kiap.bean.event.ConfigEvent;
 import com.base.kiap.config.UserHelp;
 import com.base.kiap.mvp.iview.IExtractView;

@@ -4,7 +4,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.OnLifecycleEvent;
 
 import com.base.kiap.base.BasePresenter;
-import com.base.kiap.bean.UploadParamBean;
+import com.base.kiap.bean.oldbean.UploadParamBean;
 import com.base.kiap.bean.request.BaseResult;
 import com.base.kiap.https.retrofit.ApiCallBack;
 import com.base.kiap.https.retrofit.ApiFactory;

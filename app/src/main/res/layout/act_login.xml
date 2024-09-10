@@ -12,6 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/colorPrimaryDark" />
+    <TextView
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/status_bar_view"
+        android:textColor="@color/base_main_text"
+        android:layout_alignParentRight="true"
+        android:textSize="16sp"
+        android:text="注册账号"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <ImageView
         android:layout_below="@+id/status_bar_view"

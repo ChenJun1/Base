@@ -4,7 +4,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.OnLifecycleEvent;
 
 import com.base.kiap.base.BasePresenter;
-import com.base.kiap.bean.ApplyBean;
+import com.base.kiap.bean.oldbean.ApplyBean;
 import com.base.kiap.bean.request.BaseResult;
 import com.base.kiap.bean.request.RechargeRequestBean;
 import com.base.kiap.config.UserHelp;

@@ -8,13 +8,18 @@ import java.io.Serializable;
  * @param <T>
  */
 public class BaseResult<T> implements Serializable {
-    public String msg;
-    public int code;
+
+    public String statusCode;
+
+    public String statusInfo;
+
+    public int status;
+
     public T data;
 
 
     public boolean isSuccess() {
-        return code == 0;
+        return status == 200;
     }
 
 }

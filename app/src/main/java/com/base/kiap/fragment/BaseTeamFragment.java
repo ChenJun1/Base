@@ -10,13 +10,11 @@ import androidx.annotation.Nullable;
 
 import com.base.kiap.R;
 import com.base.kiap.activity.ExchangeDetailActivity;
-import com.base.kiap.activity.TeamDetailActivity;
 import com.base.kiap.activity.basea.BaseTeamDetailActivity;
 import com.base.kiap.base.BaseFragment2;
-import com.base.kiap.bean.OrderBean;
-import com.base.kiap.bean.UsdtIndexBean;
+import com.base.kiap.bean.oldbean.OrderBean;
+import com.base.kiap.bean.oldbean.UsdtIndexBean;
 import com.base.kiap.databinding.BaseFrmTeamBinding;
-import com.base.kiap.databinding.FrmHomeBinding;
 import com.base.kiap.listen.onItemClickListen3;
 import com.base.kiap.mvp.iview.IOrderView;
 import com.base.kiap.mvp.presenter.OrderPresenter;

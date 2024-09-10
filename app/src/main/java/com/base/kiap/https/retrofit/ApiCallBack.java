@@ -36,12 +36,14 @@ public abstract class ApiCallBack<M> extends DisposableObserver<M> {
 
     @Override
     public void onNext(M m) {
+        Toast.makeText(AppConfig.INSTANCE.getApplication(), "onSuccess error", Toast.LENGTH_SHORT).show();
         try {
             BaseResult baseResult = (BaseResult) m;
             if (baseResult.isSuccess()) {
+                Toast.makeText(AppConfig.INSTANCE.getApplication(), "onSuccess error", Toast.LENGTH_SHORT).show();
                 onSuccess(m);
                 return;
-            } else if (baseResult.code == 500) {
+            } else if (baseResult.status == 500) {
                 Toast.makeText(AppConfig.INSTANCE.getApplication(), "server error", Toast.LENGTH_SHORT).show();
                 if (BuildConfig.DEBUG) {
                     onFailure(AppConfig.INSTANCE.getApplication().getString(R.string.app_name));
@@ -62,7 +64,7 @@ public abstract class ApiCallBack<M> extends DisposableObserver<M> {
 //                    LoginActivity.start();
 //                    return;
 //                }
-                onFailure(baseResult.msg);
+                onFailure(baseResult.statusInfo);
             }
             return;
         } catch (Exception e) {

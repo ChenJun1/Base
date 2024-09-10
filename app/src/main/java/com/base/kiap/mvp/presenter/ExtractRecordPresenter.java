@@ -1,7 +1,7 @@
 package com.base.kiap.mvp.presenter;
 
 import com.base.kiap.base.BasePresenter;
-import com.base.kiap.bean.ExtractRecordBean;
+import com.base.kiap.bean.oldbean.ExtractRecordBean;
 import com.base.kiap.config.UserHelp;
 import com.base.kiap.bean.request.BaseResult;
 import com.base.kiap.https.retrofit.ApiCallBack;

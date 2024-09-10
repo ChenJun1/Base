@@ -14,7 +14,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.base.kiap.R;
 import com.base.kiap.adapter.MemberListAdapter;
 import com.base.kiap.base.BaseMvpActivity;
-import com.base.kiap.bean.MemberCardBean;
+import com.base.kiap.bean.oldbean.MemberCardBean;
 import com.base.kiap.config.Constants;
 import com.base.kiap.mvp.iview.IMemberListView;
 import com.base.kiap.mvp.presenter.MemberListPresenter;

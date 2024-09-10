@@ -1,7 +1,7 @@
 package com.base.kiap.config;
 
-import com.base.kiap.bean.ConfigBean;
-import com.base.kiap.bean.UserBean;
+import com.base.kiap.bean.oldbean.ConfigBean;
+import com.base.kiap.bean.oldbean.UserBean;
 
 import static com.base.kiap.utlis.SPUtils.*;
 

@@ -3,7 +3,7 @@ package com.base.kiap.adapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.base.kiap.R;
-import com.base.kiap.bean.RechargeRecordBean;
+import com.base.kiap.bean.oldbean.RechargeRecordBean;
 
 /**
  * @Author: June

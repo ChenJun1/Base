@@ -5,8 +5,8 @@ import androidx.lifecycle.OnLifecycleEvent;
 
 import com.base.kiap.R;
 import com.base.kiap.base.BasePresenter;
-import com.base.kiap.bean.CodeBean;
-import com.base.kiap.bean.UserBean;
+import com.base.kiap.bean.oldbean.CodeBean;
+import com.base.kiap.bean.oldbean.UserBean;
 import com.base.kiap.bean.request.BaseResult;
 import com.base.kiap.bean.request.LoginBean;
 import com.base.kiap.config.SpCode;

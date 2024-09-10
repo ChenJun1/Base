@@ -8,9 +8,9 @@ import androidx.lifecycle.OnLifecycleEvent;
 
 import com.base.kiap.R;
 import com.base.kiap.base.BasePresenter;
-import com.base.kiap.bean.DialogBean;
-import com.base.kiap.bean.OrderBean;
-import com.base.kiap.bean.UsdtIndexBean;
+import com.base.kiap.bean.oldbean.DialogBean;
+import com.base.kiap.bean.oldbean.OrderBean;
+import com.base.kiap.bean.oldbean.UsdtIndexBean;
 import com.base.kiap.bean.event.OrderSuccessEvent;
 import com.base.kiap.bean.request.BaseResult;
 import com.base.kiap.config.UserHelp;
@@ -138,7 +138,7 @@ public class OrderPresenter extends BasePresenter<IOrderView> {
                 new ApiCallBack<BaseResult<Object>>() {
                     @Override
                     public void onSuccess(BaseResult<Object> model) {
-                        ToastUtil.success(model.msg);
+                        ToastUtil.success(model.statusInfo);
                         if (UserHelp.getSurplusTask()>0) {
                             UserHelp.setSurplusTask(UserHelp.getSurplusTask()-1);
                         }

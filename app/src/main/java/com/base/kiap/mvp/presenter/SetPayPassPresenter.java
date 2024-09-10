@@ -46,7 +46,7 @@ public class SetPayPassPresenter extends BasePresenter<ISetPayPass> {
                 new ApiCallBack<BaseResult<Object>>() {
                     @Override
                     public void onSuccess(BaseResult<Object> model) {
-                        ToastUtil.success(model.msg);
+                        ToastUtil.success(model.statusInfo);
                         UserHelp.setPayPassword(password);
                         getView().onSuccess();
                     }
@@ -102,7 +102,7 @@ public class SetPayPassPresenter extends BasePresenter<ISetPayPass> {
                 new ApiCallBack<BaseResult<Object>>() {
                     @Override
                     public void onSuccess(BaseResult<Object> model) {
-                        ToastUtil.success(model.msg);
+                        ToastUtil.success(model.statusInfo);
                         getView().onSuccess();
                     }
 

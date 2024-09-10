@@ -4,8 +4,8 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.OnLifecycleEvent;
 
 import com.base.kiap.base.BasePresenter;
-import com.base.kiap.bean.MemberBean;
-import com.base.kiap.bean.MemberIndexBean;
+import com.base.kiap.bean.oldbean.MemberBean;
+import com.base.kiap.bean.oldbean.MemberIndexBean;
 import com.base.kiap.bean.request.BaseResult;
 import com.base.kiap.config.UserHelp;
 import com.base.kiap.https.retrofit.ApiCallBack;

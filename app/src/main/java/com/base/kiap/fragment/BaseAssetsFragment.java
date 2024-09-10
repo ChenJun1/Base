@@ -18,9 +18,12 @@ import com.base.kiap.activity.basea.ServiceActivity;
 import com.base.kiap.activity.basea.UserInfoActivity;
 import com.base.kiap.activity.basea.WithdrawHistoryActivity;
 import com.base.kiap.base.BaseFragment2;
-import com.base.kiap.bean.OrderBean;
-import com.base.kiap.bean.UsdtIndexBean;
+import com.base.kiap.bean.base.BaseUserInfoBean;
+import com.base.kiap.bean.oldbean.OrderBean;
+import com.base.kiap.bean.oldbean.UsdtIndexBean;
 import com.base.kiap.databinding.BaseFrmAssetsBinding;
+import com.base.kiap.mvp.basepresenter.BaseUserInfoPresenter;
+import com.base.kiap.mvp.baseviwe.IBaseUserInfoView;
 import com.base.kiap.mvp.iview.IOrderView;
 import com.base.kiap.mvp.presenter.OrderPresenter;
 import com.base.kiap.tool.ActivityManager;
@@ -31,10 +34,8 @@ import java.util.List;
 
 import q.rorbin.badgeview.QBadgeView;
 
-/**
-    g
- */
-public class BaseAssetsFragment extends BaseFragment2<IOrderView, OrderPresenter> implements IOrderView {
+
+public class BaseAssetsFragment extends BaseFragment2<IBaseUserInfoView, BaseUserInfoPresenter> implements IBaseUserInfoView {
 
 
 
@@ -62,8 +63,8 @@ public class BaseAssetsFragment extends BaseFragment2<IOrderView, OrderPresenter
     }
 
     @Override
-    protected OrderPresenter createPresenter() {
-        return new OrderPresenter();
+    protected BaseUserInfoPresenter createPresenter() {
+        return new BaseUserInfoPresenter();
     }
 
     @Override
@@ -163,17 +164,7 @@ public class BaseAssetsFragment extends BaseFragment2<IOrderView, OrderPresenter
     }
 
     @Override
-    public void onIndex(UsdtIndexBean bean) {
-
-    }
-
-    @Override
-    public void onGetOrderSuccess(List<OrderBean> orderBeanList) {
-
-    }
-
-    @Override
-    public void onChangelv() {
+    public void onUserInfo(BaseUserInfoBean bean) {
 
     }
 }

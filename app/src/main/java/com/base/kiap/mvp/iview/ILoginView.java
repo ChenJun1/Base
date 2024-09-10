@@ -1,7 +1,7 @@
 package com.base.kiap.mvp.iview;
 
 import com.base.kiap.base.IBaseView;
-import com.base.kiap.bean.UserBean;
+import com.base.kiap.bean.oldbean.UserBean;
 
 /**
  * @Author: June

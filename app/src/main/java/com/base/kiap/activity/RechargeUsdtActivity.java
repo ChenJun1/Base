@@ -18,7 +18,7 @@ import com.bumptech.glide.load.MultiTransformation;
 import com.bumptech.glide.request.RequestOptions;
 import com.base.kiap.R;
 import com.base.kiap.base.BaseMvpActivity;
-import com.base.kiap.bean.UsdtBean;
+import com.base.kiap.bean.oldbean.UsdtBean;
 import com.base.kiap.mvp.iview.IRechargeUsdtView;
 import com.base.kiap.mvp.presenter.UsdtRechargePresenter;
 import com.base.kiap.utlis.CommUtils;

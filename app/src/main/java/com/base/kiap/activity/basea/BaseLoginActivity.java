@@ -19,11 +19,15 @@ import androidx.annotation.RequiresApi;
 
 import com.base.kiap.R;
 import com.base.kiap.base.BaseMvpActivity;
-import com.base.kiap.bean.UserBean;
+import com.base.kiap.bean.oldbean.UserBean;
+import com.base.kiap.bean.request.LoginBean;
 import com.base.kiap.config.SpCode;
 import com.base.kiap.config.UserHelp;
+import com.base.kiap.databinding.ActBaseLoginBinding;
+import com.base.kiap.databinding.ActBasePayPassBinding;
+import com.base.kiap.mvp.basepresenter.BaseLoginPresenter;
+import com.base.kiap.mvp.baseviwe.IBaseLoginView;
 import com.base.kiap.mvp.iview.ILoginView;
-import com.base.kiap.mvp.presenter.LoginPresenter;
 import com.base.kiap.utlis.SPUtils;
 import com.base.kiap.utlis.ToastUtil;
 
@@ -34,25 +38,19 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class BaseLoginActivity extends BaseMvpActivity<ILoginView, LoginPresenter> implements ILoginView {
-    @BindView(R.id.tv_pone)
-    EditText tvPone;
-    @BindView(R.id.code)
-    EditText code;
-    @BindView(R.id.et_invite_code)
-    EditText et_invite_code;
-    @BindView(R.id.tv_get)
-    TextView tvGet;
-    @BindView(R.id.bt_login)
-    Button btLogin;
-    @BindView(R.id.tv_country)
-    TextView tvCountry;
+public class BaseLoginActivity extends BaseMvpActivity<IBaseLoginView, BaseLoginPresenter> implements ILoginView {
 
-    private CountDownTimerUtils mCountDownTimerUtils;
+
+    private ActBaseLoginBinding binding;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+    @Override
+    public View attachLayoutView() {
+        binding = ActBaseLoginBinding.inflate(getLayoutInflater());
+        return binding.getRoot();
     }
 
     public static void start(Context context) {
@@ -68,8 +66,7 @@ public class BaseLoginActivity extends BaseMvpActivity<ILoginView, LoginPresente
     @Override
     protected void initData() {
         initView();
-//        new Handler().postDelayed(() -> isFristLogn(), 500);
-        mCountDownTimerUtils = new CountDownTimerUtils(tvGet, 60000, 1000);
+
     }
 
     private void isFristLogn() {
@@ -80,13 +77,13 @@ public class BaseLoginActivity extends BaseMvpActivity<ILoginView, LoginPresente
     }
 
     @Override
-    protected LoginPresenter createPresenter() {
-        return new LoginPresenter();
+    protected BaseLoginPresenter createPresenter() {
+        return new BaseLoginPresenter();
     }
 
     private void initView() {
 
-        tvPone.addTextChangedListener(new TextWatcher() {
+        binding.edPhone.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
@@ -97,17 +94,16 @@ public class BaseLoginActivity extends BaseMvpActivity<ILoginView, LoginPresente
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (tvPone.getText().toString().trim().length() >= 8
-                        && tvPone.getText().toString().trim().length() <= 11
-                        && code.getText().toString().trim().length() == 4) {
-                    btLogin.setEnabled(true);
+                if (binding.edPhone.getText().toString().trim().length() >= 6
+                        && !binding.etPass.getText().toString().isEmpty()) {
+                    binding.btLogin.setEnabled(true);
                 } else {
-                    btLogin.setEnabled(false);
+                    binding.btLogin.setEnabled(false);
                 }
             }
         });
 
-        code.addTextChangedListener(new TextWatcher() {
+        binding.etPass.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -120,52 +116,40 @@ public class BaseLoginActivity extends BaseMvpActivity<ILoginView, LoginPresente
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (tvPone.getText().toString().trim().length() >= 8
-                        && tvPone.getText().toString().trim().length() <= 11
-                        && code.getText().toString().trim().length() == 4) {
-                    btLogin.setEnabled(true);
+                if (binding.edPhone.getText().toString().trim().length() >= 6
+                        && !binding.etPass.getText().toString().isEmpty()) {
+                    binding.btLogin.setEnabled(true);
                 } else {
-                    btLogin.setEnabled(false);
+                    binding.btLogin.setEnabled(false);
                 }
             }
         });
     }
 
-    @OnClick({R.id.tv_get,R.id.bt_login})
+    @OnClick({R.id.bt_login})
     public void onViewClicked(View view) {
         if (mClickHelper.click()) {
             return;
         }
         switch (view.getId()) {
-            case R.id.tv_get:
-                String mPone = tvPone.getText().toString();
-                if (mPone.length() >=8 && mPone.length() <= 11) {
-                    mCountDownTimerUtils.start();
-                    getPresenter().onCode(mPone);
-                } else {
-                    ToastUtil.normal(R.string.str_tos_login_1);
-                }
-                break;
             case R.id.bt_login:
-                    MainActivity.start(this);
-//                String voPass = code.getText().toString();
-//                String tvPon = tvPone.getText().toString().trim();
-//                String inviteCode = et_invite_code.getText().toString().trim();
-//                if(checkPkg(BaseLoginActivity.this)){
-//                    ToastUtil.error(getString(R.string.str_app_correctly));
-//                    break;
-//                }
-//                if (voPass.isEmpty() || tvPon.isEmpty()) {
-//                    ToastUtil.normal(getString(R.string.str_tos_login_2));
-//                } else {
-//                    showLoading();
-//                    btLogin.setEnabled(false);
-//                    LoginBean bean = new LoginBean();
-//                    bean.phone = tvCountry.getText().toString().substring(1)+tvPon;
-//                    bean.code = voPass;
-//                    bean.inviteCode = inviteCode;
-//                    getPresenter().onLogin(bean);
-//                }
+//                    MainActivity.start(this);
+                String voPass = binding.etPass.getText().toString();
+                String tvPon =  binding.edPhone.getText().toString().trim();
+                if(checkPkg(BaseLoginActivity.this)){
+                    ToastUtil.error(getString(R.string.str_app_correctly));
+                    break;
+                }
+                if (voPass.isEmpty() || tvPon.isEmpty()) {
+                    ToastUtil.normal(getString(R.string.str_tos_login_2));
+                } else {
+                    showLoading();
+                    binding.btLogin.setEnabled(false);
+                    LoginBean bean = new LoginBean();
+                    bean.phone = tvPon;
+                    bean.passWord = voPass;
+                    getPresenter().onLogin(bean);
+                }
                 break;
         }
     }

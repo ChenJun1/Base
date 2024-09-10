@@ -5,10 +5,10 @@ import android.view.View;
 
 import com.base.kiap.R;
 import com.base.kiap.base.BasePresenter;
-import com.base.kiap.bean.BannerBean;
-import com.base.kiap.bean.ConfigBean;
-import com.base.kiap.bean.DialogBean;
-import com.base.kiap.bean.UserBean;
+import com.base.kiap.bean.oldbean.BannerBean;
+import com.base.kiap.bean.oldbean.ConfigBean;
+import com.base.kiap.bean.oldbean.DialogBean;
+import com.base.kiap.bean.oldbean.UserBean;
 import com.base.kiap.bean.event.ConfigEvent;
 import com.base.kiap.config.ConfigDate;
 import com.base.kiap.config.UserHelp;

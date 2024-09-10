@@ -17,7 +17,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.base.kiap.R;
 import com.base.kiap.adapter.CashRecordAdapter;
 import com.base.kiap.base.BaseMvpActivity;
-import com.base.kiap.bean.CashRecordBean;
+import com.base.kiap.bean.oldbean.CashRecordBean;
 import com.base.kiap.config.Constants;
 import com.base.kiap.mvp.iview.ICashRecordListView;
 import com.base.kiap.mvp.presenter.CashRecordPresenter;

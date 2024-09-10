@@ -1,8 +1,8 @@
 package com.base.kiap.mvp.presenter;
 
 import com.base.kiap.base.BasePresenter;
-import com.base.kiap.bean.FinancialBean;
-import com.base.kiap.bean.FinancialSumBean;
+import com.base.kiap.bean.oldbean.FinancialBean;
+import com.base.kiap.bean.oldbean.FinancialSumBean;
 import com.base.kiap.bean.request.BaseResult;
 import com.base.kiap.config.UserHelp;
 import com.base.kiap.https.retrofit.ApiCallBack;
@@ -82,7 +82,7 @@ public class FinancialListPresenter extends BasePresenter<IFinancialView> {
                     @Override
                     public void onSuccess(BaseResult<Object> model) {
                         if (model != null) {
-                               ToastUtil.success(model.msg);
+                               ToastUtil.success(model.statusInfo);
                                getView().onSuccess();
                         }
                     }

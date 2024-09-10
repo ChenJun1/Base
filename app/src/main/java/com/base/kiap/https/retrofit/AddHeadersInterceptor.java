@@ -26,16 +26,16 @@ public class AddHeadersInterceptor implements Interceptor {
 //                .addHeader("Cookie", "add cookies here");
 //                addHeader("Authorization", "Bearer " + SharedPreferencesHelper.getSharedPreference(CodeCons.TOKEN, ""))
                 addHeader("AppVersion", AppUtils.Companion.getVerName(AppConfig.INSTANCE.getApplication()))
-                .addHeader("Channel", AppUtils.Companion.getChannel())
+//                .addHeader("Channel", AppUtils.Companion.getChannel())
                 .addHeader("AppName", AppUtils.Companion.getAppName())
-                .addHeader("Device", GetDeviceId.getDevice(AppConfig.INSTANCE.getApplication()))
+//                .addHeader("Device", GetDeviceId.getDevice(AppConfig.INSTANCE.getApplication()))
                 .addHeader("pkgName", AppUtils.Companion.packageName())
-                .addHeader("languageType", MultiLanguageUtil.getInstance().getLanguageType()+"")
+//                .addHeader("languageType", MultiLanguageUtil.getInstance().getLanguageType()+"")
                 .addHeader("timestamp", createAt)
                 .addHeader("Authorization", UserHelp.getToken())
                 .addHeader("versionCode", AppUtils.Companion.getVerCode(AppConfig.INSTANCE.getApplication())+"")
-                .addHeader("lang", MultiLanguageUtil.getInstance().getLanguageType()+"")
-                .addHeader("auth", AppUtils.Companion.MD5Sign("yedi" + createAt))
+//                .addHeader("lang", MultiLanguageUtil.getInstance().getLanguageType()+"")
+                .addHeader("auth", AppUtils.Companion.MD5Sign("umoney" + createAt))
 //                .addHeader("Patch", String.valueOf(PatchVersionUtils.getSharedPreference(CodeCons.PATCH_CODE, 0)))
 //                .addHeader("UUID", (String) SharedPreferencesHelper.getSharedPreference(CodeCons.UUID, ""))//原来的,不保证卸载重装
 //                .addHeader("UUID", GetDeviceId.getDevice(AppConfig.INSTANCE.getApplication()))//设备唯一性

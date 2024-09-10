@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.base.kiap.R;
-import com.base.kiap.bean.DialogBean;
+import com.base.kiap.bean.oldbean.DialogBean;
 import com.base.kiap.listen.onItemClickListen;
 
 import androidx.appcompat.app.AlertDialog;

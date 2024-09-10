@@ -1,8 +1,8 @@
 package com.base.kiap.mvp.iview;
 
 import com.base.kiap.base.IBaseView;
-import com.base.kiap.bean.FinancialBean;
-import com.base.kiap.bean.FinancialSumBean;
+import com.base.kiap.bean.oldbean.FinancialBean;
+import com.base.kiap.bean.oldbean.FinancialSumBean;
 
 import java.util.List;
 

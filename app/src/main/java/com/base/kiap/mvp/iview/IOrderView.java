@@ -1,8 +1,8 @@
 package com.base.kiap.mvp.iview;
 
 import com.base.kiap.base.IBaseView;
-import com.base.kiap.bean.OrderBean;
-import com.base.kiap.bean.UsdtIndexBean;
+import com.base.kiap.bean.oldbean.OrderBean;
+import com.base.kiap.bean.oldbean.UsdtIndexBean;
 
 import java.util.List;
 

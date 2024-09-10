@@ -4,8 +4,8 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 
-import com.base.kiap.bean.ConfigBean;
-import com.base.kiap.bean.UserBean;
+import com.base.kiap.bean.oldbean.ConfigBean;
+import com.base.kiap.bean.oldbean.UserBean;
 import com.base.kiap.bean.event.ConfigEvent;
 import com.base.kiap.bean.request.BaseResult;
 import com.base.kiap.config.ConfigDate;

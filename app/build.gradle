@@ -85,9 +85,7 @@ android {
 
     flavorDimensions "version"
     productFlavors{
-        O0 {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE : 'O0']
-        }
+
     }
 
     compileOptions {

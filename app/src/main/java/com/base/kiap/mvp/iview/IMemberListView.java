@@ -1,7 +1,7 @@
 package com.base.kiap.mvp.iview;
 
 import com.base.kiap.base.IBaseView;
-import com.base.kiap.bean.MemberCardBean;
+import com.base.kiap.bean.oldbean.MemberCardBean;
 
 import java.util.List;
 

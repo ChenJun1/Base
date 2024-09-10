@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,11 +12,9 @@ import androidx.annotation.Nullable;
 
 import com.base.kiap.R;
 import com.base.kiap.base.BaseMvpActivity;
-import com.base.kiap.config.UserHelp;
 import com.base.kiap.databinding.ActBasePayPassBinding;
-import com.base.kiap.databinding.ActBaseTeamDetailListBinding;
-import com.base.kiap.mvp.iview.ISetPayPass;
-import com.base.kiap.mvp.presenter.SetPayPassPresenter;
+import com.base.kiap.mvp.basepresenter.BaseForgetPassPresenter;
+import com.base.kiap.mvp.baseviwe.IForgetPassView;
 import com.base.kiap.utlis.ToastUtil;
 
 import butterknife.BindView;
@@ -25,7 +22,7 @@ import butterknife.OnClick;
 
 /**
  */
-public class BasePassActivity extends BaseMvpActivity<ISetPayPass, SetPayPassPresenter> implements ISetPayPass {
+public class BasePassActivity extends BaseMvpActivity<IForgetPassView, BaseForgetPassPresenter> implements IForgetPassView {
     @BindView(R.id.iv_back)
     ImageView ivBack;
     @BindView(R.id.tv_title)
@@ -66,20 +63,15 @@ public class BasePassActivity extends BaseMvpActivity<ISetPayPass, SetPayPassPre
     }
 
     @Override
-    protected SetPayPassPresenter createPresenter() {
-        return new SetPayPassPresenter();
+    protected BaseForgetPassPresenter createPresenter() {
+        return new BaseForgetPassPresenter();
     }
 
     @Override
     public void onSuccess() {
-
         finish();
     }
 
-    @Override
-    public void onUsdt(String usdt) {
-
-    }
 
     @Override
     public void onHideDialog() {
@@ -102,7 +94,7 @@ public class BasePassActivity extends BaseMvpActivity<ISetPayPass, SetPayPassPre
 
                 if (!pas1.isEmpty()&&!pas2.isEmpty()&&pas1.equals(pas2)) {
                     showLoading();
-                    getPresenter().onSetPayPwd(binding.etPass1.getText().toString().trim());
+                    getPresenter().onForgetPass(binding.etPass1.getText().toString().trim());
                 }else{
                     ToastUtil.normal(getString(R.string.str_pass_inut_tis));
                 }

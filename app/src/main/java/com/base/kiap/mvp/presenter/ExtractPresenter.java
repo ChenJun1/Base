@@ -9,8 +9,8 @@ import androidx.lifecycle.OnLifecycleEvent;
 import com.base.kiap.R;
 import com.base.kiap.activity.ExtractRecordActivity;
 import com.base.kiap.base.BasePresenter;
-import com.base.kiap.bean.DialogBean;
-import com.base.kiap.bean.PayoutGetBean;
+import com.base.kiap.bean.oldbean.DialogBean;
+import com.base.kiap.bean.oldbean.PayoutGetBean;
 import com.base.kiap.bean.request.BaseResult;
 import com.base.kiap.config.UserHelp;
 import com.base.kiap.https.retrofit.ApiCallBack;
@@ -89,7 +89,7 @@ public class ExtractPresenter extends BasePresenter<IExtractView> {
                 new ApiCallBack<BaseResult<String>>() {
                     @Override
                     public void onSuccess(BaseResult<String> model) {
-                        if (model.code==0) {
+                        if (model.status ==0) {
                             String str = model.data;
                             if (str!=null&&str.length()>10) {
                                 getView().onFailure(model.data);
@@ -127,7 +127,7 @@ public class ExtractPresenter extends BasePresenter<IExtractView> {
                 new ApiCallBack<BaseResult<String>>() {
                     @Override
                     public void onSuccess(BaseResult<String> model) {
-                        if (model.code==0) {
+                        if (model.status ==0) {
                             String str = model.data;
                             if (str!=null&&str.length()>10) {
                                 getView().onFailure(model.data);

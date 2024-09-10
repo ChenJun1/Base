@@ -11,13 +11,13 @@ import androidx.annotation.Nullable;
 
 import com.base.kiap.R;
 import com.base.kiap.base.BaseFragment2;
-import com.base.kiap.bean.IndexBean;
-import com.base.kiap.bean.OrderBean;
-import com.base.kiap.bean.UserBean;
+import com.base.kiap.bean.oldbean.OrderBean;
+import com.base.kiap.bean.base.BaseBannerBean;
+import com.base.kiap.bean.base.BaseIndexBean;
 import com.base.kiap.databinding.FrmHomeBinding;
 import com.base.kiap.listen.onItemClickListen3;
-import com.base.kiap.mvp.iview.IHomeView;
-import com.base.kiap.mvp.presenter.HomePresenter;
+import com.base.kiap.mvp.basepresenter.BaseHomePresenter;
+import com.base.kiap.mvp.baseviwe.IBaseHomeView;
 import com.bumptech.glide.Glide;
 import com.youth.banner.adapter.BannerImageAdapter;
 import com.youth.banner.holder.BannerImageHolder;
@@ -29,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BaseHomeFragment extends BaseFragment2<IHomeView, HomePresenter> implements IHomeView, onItemClickListen3 {
+public class BaseHomeFragment extends BaseFragment2<IBaseHomeView, BaseHomePresenter> implements IBaseHomeView, onItemClickListen3 {
 
 
     private FrmHomeBinding binding;
@@ -59,8 +59,8 @@ public class BaseHomeFragment extends BaseFragment2<IHomeView, HomePresenter> im
     }
 
     @Override
-    protected HomePresenter createPresenter() {
-        return new HomePresenter();
+    protected BaseHomePresenter createPresenter() {
+        return new BaseHomePresenter();
     }
 
     @Override
@@ -115,22 +115,6 @@ public class BaseHomeFragment extends BaseFragment2<IHomeView, HomePresenter> im
     }
 
 
-
-    @Override
-    public void onMineInfoSuccess(UserBean bean) {
-        hideLoading();
-    }
-
-    @Override
-    public void onIndexSuccess(IndexBean bean) {
-
-    }
-
-    @Override
-    public void onGetOrderSuccess(List<OrderBean> orderBeanList) {
-
-    }
-
     @Override
     public void onHideDialog() {
         hideLoading();
@@ -146,7 +130,7 @@ public class BaseHomeFragment extends BaseFragment2<IHomeView, HomePresenter> im
     @Override
     public void onResume() {
         super.onResume();
-        getPresenter().findUser();
+        getPresenter().findIndex();
     }
 
     @Override
@@ -159,5 +143,15 @@ public class BaseHomeFragment extends BaseFragment2<IHomeView, HomePresenter> im
 
     @Override
     public void onItemClick(View v, OrderBean bean) {
+    }
+
+    @Override
+    public void onBanner(BaseBannerBean bean) {
+
+    }
+
+    @Override
+    public void onIndexSuccess(BaseIndexBean bean) {
+
     }
 }

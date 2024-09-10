@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home"
+    android:paddingHorizontal="18dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/base_text_bg_color">
+
+    <View
+        android:id="@+id/status_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_lo1"
+        android:layout_width="48dp"
+        android:layout_height="48dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_pic_back" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_below="@+id/status_bar_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/ll_login"
+        android:layout_marginBottom="18dp"
+        android:src="@drawable/logo" />
+
+
+    <RelativeLayout
+        android:layout_marginHorizontal="18dp"
+        android:layout_above="@+id/password"
+        android:id="@+id/ll_login"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <RelativeLayout
+            android:layout_marginRight="18dp"
+            android:layout_toLeftOf="@+id/tv_get"
+            android:background="@drawable/bg_pic_radius1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:gravity="center"
+                android:id="@+id/tv_country"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:enabled="false"
+                android:text="+91"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/tv_pone"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="18dp"
+                android:layout_toRightOf="@+id/tv_country"
+                android:background="@drawable/bg_pic_radius1"
+                android:hint="@string/str_hime_login_1"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:text=""
+                android:textColor="#333333"
+                android:textCursorDrawable="@drawable/my_cursor"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:id="@+id/tv_get"
+            android:paddingHorizontal="5dp"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="@color/base_main_text"
+            android:gravity="center"
+            android:background="@drawable/bg_pic_radius1"
+            android:text="Get CAPTCHA"
+            android:layout_width="100dp"
+            android:layout_height="40dp"/>
+
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_pic_radius1"
+        android:gravity="center_vertical"
+        android:hint="@string/str_him_login_2"
+        android:inputType="text"
+        android:maxLength="30"
+        android:paddingLeft="5dp"
+        android:text=""
+        android:textColor="#333333"
+        android:textCursorDrawable="@drawable/my_cursor"
+        android:textSize="16sp" />
+
+
+    <EditText
+        android:layout_below="@+id/password"
+        android:id="@+id/code"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_pic_radius1"
+        android:gravity="center_vertical"
+        android:hint="@string/str_him_login_4"
+        android:inputType="text"
+        android:maxLength="30"
+        android:paddingLeft="5dp"
+        android:text=""
+        android:textColor="#333333"
+        android:textCursorDrawable="@drawable/my_cursor"
+        android:textSize="16sp" />
+
+    <EditText
+        android:layout_marginHorizontal="18dp"
+        android:paddingLeft="5dp"
+        android:id="@+id/et_invite_code"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/code"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="18dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_pic_radius1"
+        android:hint="@string/str_him_login_3"
+        android:inputType="phone"
+        android:maxLength="7"
+        android:textColor="#333333"
+        android:textCursorDrawable="@drawable/my_cursor"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/bt_register"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/et_invite_code"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/bg_btn_0026"
+        android:text="@string/str_register"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+
+</RelativeLayout>

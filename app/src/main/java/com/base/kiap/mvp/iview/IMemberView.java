@@ -1,8 +1,8 @@
 package com.base.kiap.mvp.iview;
 
 import com.base.kiap.base.IBaseView;
-import com.base.kiap.bean.MemberBean;
-import com.base.kiap.bean.MemberIndexBean;
+import com.base.kiap.bean.oldbean.MemberBean;
+import com.base.kiap.bean.oldbean.MemberIndexBean;
 
 import java.util.List;
 

@@ -21,7 +21,7 @@ import androidx.annotation.RequiresApi;
 import com.base.kiap.R;
 import com.base.kiap.activity.basea.MainActivity;
 import com.base.kiap.base.BaseMvpActivity;
-import com.base.kiap.bean.UserBean;
+import com.base.kiap.bean.oldbean.UserBean;
 import com.base.kiap.bean.request.LoginBean;
 import com.base.kiap.config.SpCode;
 import com.base.kiap.config.UserHelp;

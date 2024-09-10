@@ -10,7 +10,7 @@
 
         <include
             android:id="@+id/ll_l1"
-            layout="@layout/include_title_common9" />
+            layout="@layout/include_title_common8" />
 
     <RelativeLayout
         android:layout_below="@+id/ll_l1"

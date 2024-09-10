@@ -19,6 +19,8 @@ import com.base.kiap.config.Constants;
 import com.base.kiap.databinding.ActBaseAddBankBinding;
 import com.base.kiap.databinding.ActBaseAddToolBinding;
 import com.base.kiap.databinding.ActBasePayPassBinding;
+import com.base.kiap.mvp.basepresenter.BaseAddBankPresenter;
+import com.base.kiap.mvp.baseviwe.IBaseAddBankView;
 import com.base.kiap.mvp.iview.IMessgListView;
 import com.base.kiap.mvp.presenter.MessgListPresenter;
 import com.base.kiap.utlis.RecyclerViewLoadUtil;
@@ -33,12 +35,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-/**
- * @Author: June
- * @CreateDate: 2/25/21 3:53 PM
- * @Description: DepositHistory
- */
-public class AddBankActivity extends BaseMvpActivity<IMessgListView, MessgListPresenter> implements IMessgListView {
+
+public class AddBankActivity extends BaseMvpActivity<IBaseAddBankView, BaseAddBankPresenter> implements IBaseAddBankView {
     @BindView(R.id.iv_back)
     ImageView ivBack;
     @BindView(R.id.tv_title)
@@ -49,8 +47,6 @@ public class AddBankActivity extends BaseMvpActivity<IMessgListView, MessgListPr
         context.startActivity(starter);
     }
 
-    private TeamAdapter adapter;
-    private List<MessageBean> mList = new ArrayList<>();
     private ActBaseAddBankBinding binding;
     @Override
     protected int attachLayoutRes() {
@@ -72,12 +68,12 @@ public class AddBankActivity extends BaseMvpActivity<IMessgListView, MessgListPr
 
 
     @Override
-    protected MessgListPresenter createPresenter() {
-        return new MessgListPresenter();
+    protected BaseAddBankPresenter createPresenter() {
+        return new BaseAddBankPresenter();
     }
 
     @Override
-    public void onSuccess(List<MessageBean> list) {
+    public void onSuccess() {
 
     }
 

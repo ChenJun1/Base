@@ -5,7 +5,7 @@ import android.annotation.SuppressLint;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.base.kiap.R;
-import com.base.kiap.bean.OrderBean;
+import com.base.kiap.bean.oldbean.OrderBean;
 import com.base.kiap.listen.onItemClickListen3;
 
 /**
