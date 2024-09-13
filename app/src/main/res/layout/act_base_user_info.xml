@@ -43,10 +43,10 @@
                     android:drawableRight="@drawable/icon_pic_copy2"
                     android:layout_marginTop="10dp"
                     android:layout_toEndOf="@+id/iv_mein01"
-                    android:id="@+id/tv_content"
+                    android:id="@+id/tv_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="WP1693562492549"
+                    android:text=""
                     android:textColor="@color/base_text_bla"
                     android:textStyle="bold"
                     android:textSize="16sp" />
@@ -54,12 +54,12 @@
                 <TextView
                     android:layout_marginTop="5dp"
                     android:layout_toEndOf="@+id/iv_mein01"
-                    android:layout_below="@+id/tv_content"
+                    android:layout_below="@+id/tv_phone"
                     android:drawableRight="@drawable/icon_pic_copy2"
-                    android:id="@+id/tv_content2"
+                    android:id="@+id/tv_userId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ID: 47987284234"
+                    android:text="ID: "
                     android:textColor="@color/base_text_bal3"
                     android:textSize="14sp" />
             </RelativeLayout>
@@ -84,11 +84,11 @@
                 <TextView
                     android:layout_marginEnd="10dp"
                     android:layout_toStartOf="@+id/im_01"
-                    android:id="@+id/tv_phone"
+                    android:id="@+id/tv_phone_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="9239489334"
+                    android:text=""
                     android:textColor="@color/base_main7"
                     android:textSize="14sp" />
 
@@ -120,11 +120,11 @@
                 <TextView
                     android:layout_marginEnd="10dp"
                     android:layout_toStartOf="@+id/im_02"
-                    android:id="@+id/tv_id"
+                    android:id="@+id/tv_userid2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="7239489334"
+                    android:text=""
                     android:textColor="@color/base_main7"
                     android:textSize="14sp" />
 
@@ -157,11 +157,11 @@
                 <TextView
                     android:layout_marginEnd="10dp"
                     android:layout_toStartOf="@+id/im_email"
-                    android:id="@+id/tv_eamil"
+                    android:id="@+id/tv_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="2384848@email"
+                    android:text=""
                     android:textColor="@color/base_main7"
                     android:textSize="14sp" />
 
@@ -197,7 +197,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="sdemail"
+                    android:text=""
                     android:textColor="@color/base_main_text_bright"
                     android:textSize="14sp" />
 

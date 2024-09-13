@@ -2,23 +2,34 @@ package com.base.kiap.activity.basea;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import androidx.annotation.RequiresApi;
+
 import com.base.kiap.R;
 import com.base.kiap.base.BaseMvpActivity;
+import com.base.kiap.bean.base.request.PinRequest;
+import com.base.kiap.config.UserHelp;
 import com.base.kiap.databinding.ActBasePinCodeBinding;
+import com.base.kiap.mvp.basepresenter.BasePinCodePresenter;
+import com.base.kiap.mvp.baseviwe.IForgePinCodeView;
 import com.base.kiap.mvp.iview.ISetPayPass;
 import com.base.kiap.mvp.presenter.SetPayPassPresenter;
+import com.base.kiap.utlis.ToastUtil;
+
+import java.lang.ref.WeakReference;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
  */
-public class BasePinCodeActivity extends BaseMvpActivity<ISetPayPass, SetPayPassPresenter> implements ISetPayPass {
+public class BasePinCodeActivity extends BaseMvpActivity<IForgePinCodeView, BasePinCodePresenter> implements IForgePinCodeView {
     @BindView(R.id.iv_back)
     ImageView ivBack;
     @BindView(R.id.tv_title)
@@ -27,7 +38,7 @@ public class BasePinCodeActivity extends BaseMvpActivity<ISetPayPass, SetPayPass
 
     private ActBasePinCodeBinding binding;
 
-
+    private CountDownTimerUtils mCountDownTimerUtils;
     public static void start(Context context) {
         Intent starter = new Intent(context, BasePinCodeActivity.class);
         context.startActivity(starter);
@@ -52,23 +63,55 @@ public class BasePinCodeActivity extends BaseMvpActivity<ISetPayPass, SetPayPass
     }
 
     private void initViewTV() {
+        mCountDownTimerUtils = new CountDownTimerUtils(binding.tvGet, 60000, 1000);
+        binding.tvGet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String phone = UserHelp.getPhone();
+                if (phone.length() == 11) {
+                    mCountDownTimerUtils.start();
+                    getPresenter().onCodeSms(phone);
+                }else{
+                    ToastUtil.normal(R.string.str_input_error);
+                }
+            }
+        });
+        binding.btSavePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String pas1 = binding.etPass.getText().toString().trim();
+                String pas2 = binding.etPass2.getText().toString().trim();
+                String otp = binding.etOtp.getText().toString().trim();
+
+                if (!pas1.isEmpty()&&!pas2.isEmpty()&&pas1.equals(pas2)) {
+                    showLoading();
+                    PinRequest request = new PinRequest();
+                    request.password = pas1;
+                    request.otp = otp;
+                    getPresenter().onForgetPin(request);
+                }else{
+                    ToastUtil.normal(getString(R.string.str_pass_inut_tis));
+                }
+            }
+        });
     }
 
     @Override
-    protected SetPayPassPresenter createPresenter() {
-        return new SetPayPassPresenter();
+    protected BasePinCodePresenter createPresenter() {
+        return new BasePinCodePresenter();
+    }
+
+    @Override
+    public void onSmsSuccess() {
+        ToastUtil.success("Send Success");
     }
 
     @Override
     public void onSuccess() {
-
         finish();
     }
 
-    @Override
-    public void onUsdt(String usdt) {
 
-    }
 
     @Override
     public void onHideDialog() {
@@ -88,6 +131,48 @@ public class BasePinCodeActivity extends BaseMvpActivity<ISetPayPass, SetPayPass
             case R.id.bt_save_pic:
 
                 break;
+        }
+    }
+
+    public class CountDownTimerUtils extends CountDownTimer {
+        private WeakReference<TextView> mTextView;
+
+        public CountDownTimerUtils(TextView textView, long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);
+            this.mTextView = new WeakReference(textView);
+        }
+
+        @RequiresApi(api = Build.VERSION_CODES.M)
+        @Override
+        public void onTick(long millisUntilFinished) {
+            //用弱引用 先判空 避免崩溃
+            if (mTextView.get() == null) {
+                cancle();
+                return;
+            }
+            mTextView.get().setClickable(false); //设置不可点击
+            mTextView.get().setText(millisUntilFinished / 999 + " S"); //设置倒计时时间
+            mTextView.get().setTextColor(getColor(R.color.color_bd));
+
+        }
+
+        @RequiresApi(api = Build.VERSION_CODES.M)
+        @Override
+        public void onFinish() {
+            //用软引用 先判空 避免崩溃
+            if (mTextView.get() == null) {
+                cancle();
+                return;
+            }
+            mTextView.get().setText(R.string.str_login_send);
+            mTextView.get().setClickable(true);//重新获得点击
+            mTextView.get().setTextColor(getColor(R.color.color_font_black_00));
+        }
+
+        public void cancle() {
+            if (this != null) {
+                this.cancel();
+            }
         }
     }
 }

@@ -1,5 +1,10 @@
 package com.base.kiap.fragment;
 
+import static com.base.kiap.utlis.SPUtils.put;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,28 +14,29 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.base.kiap.R;
+import com.base.kiap.activity.basea.BaseLoginActivity;
 import com.base.kiap.activity.basea.BasePassActivity;
 import com.base.kiap.activity.basea.BasePinCodeActivity;
 import com.base.kiap.activity.basea.DepositHistoryActivity;
 import com.base.kiap.activity.basea.InBoxActivity;
 import com.base.kiap.activity.basea.QuotaHistoryActivity;
 import com.base.kiap.activity.basea.ServiceActivity;
-import com.base.kiap.activity.basea.UserInfoActivity;
+import com.base.kiap.activity.basea.BaseUserInfoActivity;
 import com.base.kiap.activity.basea.WithdrawHistoryActivity;
 import com.base.kiap.base.BaseFragment2;
 import com.base.kiap.bean.base.BaseUserInfoBean;
-import com.base.kiap.bean.oldbean.OrderBean;
-import com.base.kiap.bean.oldbean.UsdtIndexBean;
+import com.base.kiap.config.AppConfig;
+import com.base.kiap.config.SpCode;
+import com.base.kiap.config.UserHelp;
 import com.base.kiap.databinding.BaseFrmAssetsBinding;
 import com.base.kiap.mvp.basepresenter.BaseUserInfoPresenter;
 import com.base.kiap.mvp.baseviwe.IBaseUserInfoView;
-import com.base.kiap.mvp.iview.IOrderView;
-import com.base.kiap.mvp.presenter.OrderPresenter;
 import com.base.kiap.tool.ActivityManager;
+import com.base.kiap.utlis.CommUtils;
+import com.base.kiap.utlis.SPUtils;
+import com.base.kiap.utlis.ToastUtil;
 
 import org.greenrobot.eventbus.EventBus;
-
-import java.util.List;
 
 import q.rorbin.badgeview.QBadgeView;
 
@@ -76,6 +82,7 @@ public class BaseAssetsFragment extends BaseFragment2<IBaseUserInfoView, BaseUse
     protected void lazyLoad() {
         initView();
     }
+
 
     private void initView() {
         binding.llQuota.setOnClickListener(new View.OnClickListener() {
@@ -129,7 +136,7 @@ public class BaseAssetsFragment extends BaseFragment2<IBaseUserInfoView, BaseUse
         binding.llOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivityManager.getAppManager().AppExit(getActivity());
+                getPresenter().onOut();
             }
         });
         binding.tvDetail.setOnClickListener(new View.OnClickListener() {
@@ -141,15 +148,31 @@ public class BaseAssetsFragment extends BaseFragment2<IBaseUserInfoView, BaseUse
         binding.llIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserInfoActivity.start(getActivity());
+                BaseUserInfoActivity.start(getActivity());
             }
         });
-        new QBadgeView(getContext()).bindTarget(binding.ivMsg).setBadgeNumber(5);
+        binding.tvPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommUtils.copy(binding.tvPhone.getText().toString());
+                ToastUtil.success("Copy Success");
+            }
+        });
+
+        binding.tvUserId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommUtils.copy(binding.tvUserId.getText().toString());
+                ToastUtil.success("Copy Success");
+            }
+        });
+
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        getPresenter().onUserInfo();
     }
 
     @Override
@@ -163,8 +186,29 @@ public class BaseAssetsFragment extends BaseFragment2<IBaseUserInfoView, BaseUse
         EventBus.getDefault().unregister(this);
     }
 
+    @SuppressLint("SetTextI18n")
+    private void handleData(BaseUserInfoBean bean) {
+        binding.tvPhone.setText(bean.phone);
+        binding.tvUserId.setText(bean.userId + "");
+        binding.tvRatio.setText(bean.rewardRadio+"");
+        binding.balance.setText(CommUtils.coverMoney(bean.balance));
+        binding.todayEarning.setText(CommUtils.coverMoney(bean.todayEarning));
+        new QBadgeView(getContext()).bindTarget(binding.ivMsg).setBadgeNumber(bean.unReadMessageNum);
+    }
+
     @Override
     public void onUserInfo(BaseUserInfoBean bean) {
+        handleData(bean);
+        UserHelp.updateBaseUser(bean);
+    }
 
+    @Override
+    public void onOutSuccess() {
+        SPUtils.clear();
+        Context context = AppConfig.INSTANCE.getApplication();
+        Intent intent = new Intent();
+        intent.setClass(context, BaseLoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }

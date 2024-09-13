@@ -4,6 +4,8 @@ import com.base.kiap.base.IBaseView;
 import com.base.kiap.bean.base.BaseBannerBean;
 import com.base.kiap.bean.base.BaseIndexBean;
 
+import java.util.List;
+
 /**
  * @Author: June
  * @CreateDate: 12/11/20 2:13 PM
@@ -11,8 +13,9 @@ import com.base.kiap.bean.base.BaseIndexBean;
  */
 public interface IBaseHomeView extends IBaseView {
 
-    void onBanner(BaseBannerBean bean);
-
     void onIndexSuccess(BaseIndexBean bean);
+    void onBannerSuccess(List<BaseBannerBean> bean);
+
+    void onWithdrawSwitchSuccess();
 
 }

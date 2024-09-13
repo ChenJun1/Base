@@ -13,7 +13,8 @@ public class BaseUserInfoBean {
     public String telegram;
     public int userId;
     public String uid;
-    public int balance;
-    public int todayEarning;
+    public long balance;
+    public long todayEarning;
     public int unReadMessageNum;
+    public double rewardRadio;
 }

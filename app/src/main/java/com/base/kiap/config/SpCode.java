@@ -7,13 +7,13 @@ package com.base.kiap.config;
  */
 public class SpCode {
     public static final String USERID = "id";// 用户id
+    public static final String UID = "uid";// 用户id
     public static final String USERNLANCE = "blance";// 用户余额
     public static final String LEVELBALANCE = "levelBalance";// 任务要求保证金
     public static final String INVITATIONOK = "invitationOk";// 有效邀请
     public static final String USERPHONE = "phone";// 用户手机
     public static final String USERNAME = "username";// 用户name
     public static final String LEVEL = "level";// 等级
-    public static final String INVITECODE = "inviteCode";// 邀请码
     public static final String PAYPASSWORD = "payPassword";// 支付密码
     public static final String SURPLUSTASK = "surplusTask";// 任务次数
     public static final String QRCODE = "qrCode";// 邀请二维码
@@ -22,6 +22,14 @@ public class SpCode {
     public static final String FRIENDMONEY = "friendMoney";// 累计奖励
     public static final String NOVICE = "novice";// 是否是新用户
     public static final String COUNTRYCODE = "countryCode";// 用户所在国家
+
+
+
+    public static final String MAIL = "mail";// y邮箱
+    public static final String RSBALANCE = "rsBalance";// 余额
+    public static final String INVITECODE = "inviteCode";// 邀请码
+    public static final String TELEGRAM = "telegram";//
+
     public static final String STAT = "stat";// 用户有效状态
     public static final String RETURNDATE = "returnDate";// 用户有效状态
     public static final String FIRSTCHARGE = "firstCharge";// 是否买过新手福利

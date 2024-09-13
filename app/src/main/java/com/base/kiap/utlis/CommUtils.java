@@ -13,6 +13,8 @@ import android.os.Build;
 import com.base.kiap.config.AppConfig;
 import com.base.kiap.config.Constants;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -149,6 +151,21 @@ public class CommUtils {
 
             e.printStackTrace();
         }
+    }
+
+    public static String coverMoney(long originalValue) {
+        if (originalValue <= 0) {
+            return "0";
+        }
+        BigDecimal value = new BigDecimal(originalValue);
+        BigDecimal hundred = new BigDecimal(100);
+
+        // 除以100，保留两位小数
+        BigDecimal result = value.divide(hundred, 2, RoundingMode.HALF_UP);
+
+        // 转换为字符串输出
+        String formattedResult = String.format("%.2f", result);
+        return formattedResult;
     }
 
 

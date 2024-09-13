@@ -11,16 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.base.kiap.R;
-import com.base.kiap.activity.TeamDetailActivity;
 import com.base.kiap.adapter.BaseDepositHistoryAdapter;
-import com.base.kiap.adapter.TeamAdapter;
 import com.base.kiap.base.BaseMvpActivity;
-import com.base.kiap.bean.dao.MessageBean;
+import com.base.kiap.bean.base.DepositInrHistoryBean;
 import com.base.kiap.config.Constants;
 import com.base.kiap.databinding.ActBaseDepositListBinding;
-import com.base.kiap.databinding.ActBaseInboxListBinding;
-import com.base.kiap.mvp.iview.IMessgListView;
-import com.base.kiap.mvp.presenter.MessgListPresenter;
+import com.base.kiap.mvp.basepresenter.BaseDepositHistoryPresenter;
+import com.base.kiap.mvp.baseviwe.IBaseDepositHistoryView;
 import com.base.kiap.utlis.RecyclerViewLoadUtil;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.android.material.tabs.TabLayout;
@@ -39,7 +36,7 @@ import butterknife.OnClick;
  * @CreateDate: 2/25/21 3:53 PM
  * @Description: DepositHistory
  */
-public class DepositHistoryActivity extends BaseMvpActivity<IMessgListView, MessgListPresenter> implements IMessgListView {
+public class DepositHistoryActivity extends BaseMvpActivity<IBaseDepositHistoryView, BaseDepositHistoryPresenter> implements IBaseDepositHistoryView {
     @BindView(R.id.iv_back)
     ImageView ivBack;
     @BindView(R.id.tv_title)
@@ -59,7 +56,9 @@ public class DepositHistoryActivity extends BaseMvpActivity<IMessgListView, Mess
     }
 
     private BaseDepositHistoryAdapter adapter;
-    private List<MessageBean> mList = new ArrayList<>();
+    public int page = 1;
+    public int type = 1;
+    private List<DepositInrHistoryBean> mList = new ArrayList<>();
 
     @Override
     protected int attachLayoutRes() {
@@ -74,10 +73,8 @@ public class DepositHistoryActivity extends BaseMvpActivity<IMessgListView, Mess
     protected void initData() {
         tvTitle.setText("Deposit history");
         initImmersionBar();
-//        showLoading();
-        MessageBean bean = new MessageBean();
-        mList.add(bean);
-        mList.add(bean);
+        showLoading();
+        getPresenter().getMoneyHistoryOrderList(page);
         initTabs();
         initRv();
     }
@@ -92,22 +89,34 @@ public class DepositHistoryActivity extends BaseMvpActivity<IMessgListView, Mess
         recyclerview.setAdapter(adapter);
         adapter.setPreLoadNumber(1);
         adapter.setNewData(mList);
-        refreshLayout.setEnableLoadmore(false);
+        refreshLayout.setEnableLoadmore(true);
         refreshLayout.setOnRefreshLoadmoreListener(new OnRefreshLoadmoreListener() {
             @Override
             public void onLoadmore(RefreshLayout refreshlayout) {
+                page = page + 1;
+                if (type == 1) {
+                    getPresenter().getMoneyHistoryOrderList(page);
+                }else{
+                    getPresenter().getMoneyHistoryUstdList(page);
+                }
             }
 
             @Override
             public void onRefresh(RefreshLayout refreshlayout) {
                 refreshLayout.finishRefresh(Constants.RefreshTime, true);
                 showLoading();
+                page = 1;
+                if (type == 1) {
+                    getPresenter().getMoneyHistoryOrderList(page);
+                }else{
+                    getPresenter().getMoneyHistoryUstdList(page);
+                }
             }
         });
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                TeamDetailActivity.start(DepositHistoryActivity.this);
+                DepositHistoryDetailActivity.start(DepositHistoryActivity.this,mList.get(position),type);
             }
         });
     }
@@ -115,10 +124,23 @@ public class DepositHistoryActivity extends BaseMvpActivity<IMessgListView, Mess
     private void initTabs() {
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("INR"), true);
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("USDT"));
-
         binding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                switch (tab.getPosition()) {
+                    case 0:
+                        type = 1;
+                        break;
+                    case 1:
+                        type = 2;
+                        break;
+                }
+                page = 1;
+                if (type == 1) {
+                    getPresenter().getMoneyHistoryOrderList(page);
+                }else{
+                    getPresenter().getMoneyHistoryUstdList(page);
+                }
             }
 
             @Override
@@ -135,25 +157,11 @@ public class DepositHistoryActivity extends BaseMvpActivity<IMessgListView, Mess
     }
 
     @Override
-    protected MessgListPresenter createPresenter() {
-        return new MessgListPresenter();
+    protected BaseDepositHistoryPresenter createPresenter() {
+        return new BaseDepositHistoryPresenter();
     }
 
-    @Override
-    public void onSuccess(List<MessageBean> list) {
-        if (list != null) {
-            refreshLayout.finishRefresh(true);
-            mList.clear();
-            if (list.size() == 0) {
-                refreshLayout.resetNoMoreData();
-                rlEmpty.setVisibility(View.VISIBLE);
-            } else {
-                rlEmpty.setVisibility(View.GONE);
-            }
-            mList.addAll(list);
-            adapter.setNewData(mList);
-        }
-    }
+
 
     @Override
     public void onHideDialog() {
@@ -166,5 +174,23 @@ public class DepositHistoryActivity extends BaseMvpActivity<IMessgListView, Mess
         finish();
     }
 
+
+    @Override
+    public void onSuccessInrList(List<DepositInrHistoryBean> list) {
+        refreshLayout.finishRefresh(true);
+        refreshLayout.finishLoadmore();
+        if (list != null) {
+            if (page == 1) {
+                mList.clear();
+            }
+            mList.addAll(list);
+            adapter.setNewData(mList);
+            if (mList.size() == 0) {
+                rlEmpty.setVisibility(View.VISIBLE);
+            } else {
+                rlEmpty.setVisibility(View.GONE);
+            }
+        }
+    }
 
 }

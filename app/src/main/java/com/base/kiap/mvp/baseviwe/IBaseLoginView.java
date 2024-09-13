@@ -11,4 +11,5 @@ import com.base.kiap.bean.base.BaseUserBean;
 public interface IBaseLoginView extends IBaseView {
     void onLoginSuccess(BaseUserBean bean);
 
+    void onRegisterSuccess(BaseUserBean bean);
 }

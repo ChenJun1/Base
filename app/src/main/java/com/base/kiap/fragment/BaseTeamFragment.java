@@ -1,5 +1,6 @@
 package com.base.kiap.fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,14 +13,19 @@ import com.base.kiap.R;
 import com.base.kiap.activity.ExchangeDetailActivity;
 import com.base.kiap.activity.basea.BaseTeamDetailActivity;
 import com.base.kiap.base.BaseFragment2;
+import com.base.kiap.bean.base.BaseTeamIndexInfoBean;
 import com.base.kiap.bean.oldbean.OrderBean;
 import com.base.kiap.bean.oldbean.UsdtIndexBean;
 import com.base.kiap.databinding.BaseFrmTeamBinding;
 import com.base.kiap.listen.onItemClickListen3;
+import com.base.kiap.mvp.basepresenter.BaseTeamPresenter;
+import com.base.kiap.mvp.baseviwe.IBaseTeamView;
 import com.base.kiap.mvp.iview.IOrderView;
 import com.base.kiap.mvp.presenter.OrderPresenter;
+import com.base.kiap.utlis.CommUtils;
 import com.base.kiap.utlis.DialogUtlis;
 import com.base.kiap.utlis.ShareUtils;
+import com.base.kiap.utlis.ToastUtil;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -30,11 +36,12 @@ import java.util.List;
  * @CreateDate: 12/11/20 2:36 PM
  * @Description: 接单
  */
-public class BaseTeamFragment extends BaseFragment2<IOrderView, OrderPresenter> implements IOrderView, onItemClickListen3 {
+public class BaseTeamFragment extends BaseFragment2<IBaseTeamView, BaseTeamPresenter> implements IBaseTeamView, onItemClickListen3 {
 
 
 
     private BaseFrmTeamBinding binding;
+    private BaseTeamIndexInfoBean indexInfoBean;
 
     public static BaseTeamFragment newInstance() {
 
@@ -58,8 +65,8 @@ public class BaseTeamFragment extends BaseFragment2<IOrderView, OrderPresenter> 
     }
 
     @Override
-    protected OrderPresenter createPresenter() {
-        return new OrderPresenter();
+    protected BaseTeamPresenter createPresenter() {
+        return new BaseTeamPresenter();
     }
 
     @Override
@@ -77,41 +84,67 @@ public class BaseTeamFragment extends BaseFragment2<IOrderView, OrderPresenter> 
             BaseTeamDetailActivity.start(getActivity());
         });
         binding.llTelegram.setOnClickListener(v -> {
-            ShareUtils.shareTelegram("");
+            if (indexInfoBean != null) {
+                ShareUtils.shareTelegram(indexInfoBean.telegramLink);
+            }
         });
         binding.llFacebook.setOnClickListener(v -> {
-            ShareUtils.shareCommonFacebook("");
+            if (indexInfoBean != null) {
+                ShareUtils.shareCommonFacebook(indexInfoBean.facebookLink);
+            }
         });
         binding.llWhatapp.setOnClickListener(v -> {
-            ShareUtils.shareWhat("");
+            if (indexInfoBean != null) {
+                ShareUtils.shareWhat(indexInfoBean.whatsappLink);
+            }
         });
         binding.llQr.setOnClickListener(v -> {
-            DialogUtlis.showShareDialog(getActivity());
+            if (indexInfoBean != null) {
+                DialogUtlis.showShareDialog(getActivity());
+            }
         });
         binding.llShare.setOnClickListener(v -> {
-            DialogUtlis.showShareDialog(getActivity());
+            if (indexInfoBean != null) {
+                DialogUtlis.showShareDialog(getActivity());
+            }
         });
-
+        binding.ivCp1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommUtils.copy(binding.invitationLink.getText().toString());
+                ToastUtil.success("Copy Success");
+            }
+        });
     }
 
 
-    @Override
-    public void onIndex(UsdtIndexBean bean) {
-
+    @SuppressLint("SetTextI18n")
+    private void handleData(BaseTeamIndexInfoBean bean) {
+        binding.tvMoney.setText(bean.todayTeamDeposit+"");
+        binding.tvTotalMoney.setText(bean.totalTeamDeposit+"");
+        binding.myTotalCommissions.setText(bean.myTotalCommissions+"");
+        binding.myYesterdayCommissions.setText(bean.myYesterdayCommissions+"");
+        binding.myTodayCommissions.setText("+ " + bean.myTodayCommissions+"");
+        binding.teamCount.setText(bean.teamCount+"");
+        binding.todayNewTeam.setText("+ "+bean.todayNewTeam+"");
+        binding.invitationLink.setText(bean.invitationLink);
+        binding.tvLevel1Start.setText(bean.levelAUserNum + "");
+        binding.tvLevel1Data.setText(bean.levelARewardRadio + "%");
+        binding.tvLevel1End1.setText(bean.myLevelAReward + "");
+        binding.tvLevel2Start.setText(bean.levelBUserNum + "");
+        binding.tvLevel2Data.setText(bean.levelBRewardRadio + "%");
+        binding.tvLevel2End1.setText(bean.myLevelBReward + "");
     }
-
     @Override
-    public void onGetOrderSuccess(List<OrderBean> orderBeanList) {
-
-    }
-
-    @Override
-    public void onChangelv() {
+    public void onIndexSuccess(BaseTeamIndexInfoBean bean) {
+        indexInfoBean = bean;
+        handleData(indexInfoBean);
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        getPresenter().findIndex();
     }
 
     @Override

@@ -22,6 +22,7 @@ public class TeamDetailActivity extends BaseActivity {
     @BindView(R.id.tv_title)
     TextView tvTitle;
 
+
     public static void start(Context context) {
         Intent starter = new Intent(context, TeamDetailActivity.class);
         context.startActivity(starter);

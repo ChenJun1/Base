@@ -30,6 +30,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tv_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -53,6 +54,7 @@
 
 
         <TextView
+            android:id="@+id/amountReward"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reward: + 3.20"
@@ -61,7 +63,7 @@
 
         <TextView
             android:layout_marginTop="5dp"
-            android:id="@+id/tv_income"
+            android:id="@+id/tv_orderId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Orderno:23023421032403240"
@@ -77,12 +79,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingVertical="6dp"
-                android:text="2024-07-17 10:01:31"
+                android:text=""
                 android:textColor="@color/base_main7"
                 android:textSize="@dimen/text_nom" />
 
             <TextView
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_alignParentEnd="true"
                 android:id="@+id/tv_check"
                 android:layout_width="wrap_content"

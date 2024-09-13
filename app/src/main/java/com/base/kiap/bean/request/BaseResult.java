@@ -10,6 +10,9 @@ import java.io.Serializable;
 public class BaseResult<T> implements Serializable {
 
     public String statusCode;
+    public String timestamp;
+    public String error;
+    public String path;
 
     public String statusInfo;
 

@@ -92,14 +92,6 @@ public class BaseToolFragment01 extends BaseFragment2<IOrderView, OrderPresenter
     }
 
     private void initRv() {
-        MessageBean bean = new MessageBean();
-        mList.add(bean);
-        mList.add(bean);
-        mList.add(bean);
-        mList.add(bean);
-        mList.add(bean);
-        mList.add(bean);
-        mList.add(bean);
         adapter = new BaseDeposit01Adapter();
         adapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),

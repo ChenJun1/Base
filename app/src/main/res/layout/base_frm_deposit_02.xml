@@ -58,7 +58,7 @@
                 android:layout_marginTop="10dp">
 
                 <TextView
-                    android:id="@+id/tv_l11"
+                    android:id="@+id/tv_quota"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="5dp"
-                    android:layout_toEndOf="@+id/tv_l11"
+                    android:layout_toEndOf="@+id/tv_quota"
                     android:text="INR"
                     android:textColor="@color/base_text_bla"
                     android:textSize="@dimen/text_min2" />
@@ -201,13 +201,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toStartOf="@+id/tv_inr"
+                    android:layout_toStartOf="@+id/tv_exchangeValue"
                     android:text=" USDT = "
                     android:textColor="@color/base_text_bla"
                     android:textSize="@dimen/text_title_18" />
 
                 <TextView
-                    android:id="@+id/tv_inr"
+                    android:id="@+id/tv_exchangeValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -228,6 +228,8 @@
             </RelativeLayout>
 
             <EditText
+                android:maxEms="10"
+                android:inputType="number"
                 android:id="@+id/ed_usd"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -259,7 +261,6 @@
                     android:id="@+id/tv_bonus_inr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginStart="5dp"
                     android:layout_toEndOf="@+id/tv_bonus"
                     android:text="1.90"
@@ -291,7 +292,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="Estimated bonus:"
+                    android:text="You will rceive:"
                     android:textColor="@color/base_text_bla"
                     android:textSize="@dimen/text_title_18" />
 

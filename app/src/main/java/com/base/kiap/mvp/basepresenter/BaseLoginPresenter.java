@@ -6,6 +6,7 @@ import androidx.lifecycle.OnLifecycleEvent;
 import com.base.kiap.R;
 import com.base.kiap.base.BasePresenter;
 import com.base.kiap.bean.base.BaseUserBean;
+import com.base.kiap.bean.base.request.RegisterRequest;
 import com.base.kiap.bean.request.BaseResult;
 import com.base.kiap.bean.request.LoginBean;
 import com.base.kiap.config.SpCode;
@@ -94,17 +95,18 @@ public class BaseLoginPresenter extends BasePresenter<IBaseLoginView> {
     /**
      * 注册
      */
-    public void onRegister(String phone,String pass,String inviteCode,String smsCode) {//917543957131，9199024142
-        LinkedHashMap<String, Object> map = new LinkedHashMap<>();
-        map.put("phone", phone);
-        map.put("passwd", pass);
-        map.put("inviteCode", inviteCode);
-        map.put("smsCode", smsCode);
-        mStriation.addSubStriation(ApiFactory.retrofit().create(BasePostApi.class).register(map),
-                new ApiCallBack<BaseResult<Integer>>() {
+    public void onRegister(RegisterRequest request) {//917543957131，9199024142
+
+        mStriation.addSubStriation(ApiFactory.retrofit().create(BasePostApi.class).register(request),
+                new ApiCallBack<BaseResult<BaseUserBean>>() {
                     @Override
-                    public void onSuccess(BaseResult<Integer> model) {
-                        ToastUtil.success(R.string.str_login_sencsu);
+                    public void onSuccess(BaseResult<BaseUserBean> model) {
+                        if (model != null) {
+                            BaseUserBean bean = model.data;
+                            if (bean != null) {
+                                getView().onRegisterSuccess(bean);
+                            }
+                        }
                     }
 
                     @Override

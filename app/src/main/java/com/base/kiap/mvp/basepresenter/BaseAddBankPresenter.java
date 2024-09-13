@@ -5,6 +5,7 @@ import androidx.lifecycle.OnLifecycleEvent;
 
 import com.base.kiap.base.BasePresenter;
 import com.base.kiap.bean.base.BaseBankInfoBean;
+import com.base.kiap.bean.base.request.AddBankRequest;
 import com.base.kiap.bean.request.BaseResult;
 import com.base.kiap.config.UserHelp;
 import com.base.kiap.https.retrofit.ApiCallBack;
@@ -37,10 +38,9 @@ public class BaseAddBankPresenter extends BasePresenter<IBaseAddBankView> {
         }
     }
 
-    public void onAddBank(BaseBankInfoBean bankInfoBean) {
-        LinkedHashMap<String, Object> map = new LinkedHashMap<>();
-        map.put("userId", UserHelp.getUserId());
-        mStriation.addSubStriation(ApiFactory.retrofit().create(BasePostApi.class).addBank(map),
+    public void onAddBank(AddBankRequest bankInfoBean) {
+
+        mStriation.addSubStriation(ApiFactory.retrofit().create(BasePostApi.class).addBank(bankInfoBean),
                 new ApiCallBack<BaseResult<Object>>() {
                     @Override
                     public void onSuccess(BaseResult<Object> model) {
@@ -64,5 +64,34 @@ public class BaseAddBankPresenter extends BasePresenter<IBaseAddBankView> {
                     }
                 });
     }
+
+    public void onUpdateBank(AddBankRequest bankInfoBean) {
+
+        mStriation.addSubStriation(ApiFactory.retrofit().create(BasePostApi.class).updateBank(bankInfoBean),
+                new ApiCallBack<BaseResult<Object>>() {
+                    @Override
+                    public void onSuccess(BaseResult<Object> model) {
+                        if (model != null) {
+                            Object beanList = model.data;
+                            if (beanList != null) {
+                                getView().onSuccess();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+                        ToastUtil.error(msg);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        super.onFinish();
+                        getView().onHideDialog();
+                    }
+                });
+    }
+
+
 
 }

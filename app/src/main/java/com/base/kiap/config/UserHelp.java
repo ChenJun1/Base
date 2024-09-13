@@ -1,5 +1,7 @@
 package com.base.kiap.config;
 
+import com.base.kiap.bean.base.BaseUserBean;
+import com.base.kiap.bean.base.BaseUserInfoBean;
 import com.base.kiap.bean.oldbean.ConfigBean;
 import com.base.kiap.bean.oldbean.UserBean;
 
@@ -12,12 +14,12 @@ import static com.base.kiap.utlis.SPUtils.*;
  */
 public class UserHelp {
     public static boolean isLogin() {
-        int id = (int) get(SpCode.USERID, 0);
-        return id > 0;
+        String id = (String) get(SpCode.USERID, "");
+        return id.isEmpty();
     }
 
-    public static int getUserId() {
-        return (int) get(SpCode.USERID, 0);
+    public static String getUserId() {
+        return (String) get(SpCode.USERID, "");
     }
 
     public static String getUserName() {
@@ -37,6 +39,17 @@ public class UserHelp {
     }
     public static String getToken() {
         return (String) get(SpCode.TOKEN, "");
+    }
+
+    public static String getMail() {
+        return (String) get(SpCode.MAIL, "");
+    }
+    public static long getRsBalance() {
+        return (long) get(SpCode.RSBALANCE, 0L);
+    }
+
+    public static String getTelegram() {
+        return (String) get(SpCode.TELEGRAM, "");
     }
 
     public static String getInviteCode() {
@@ -87,11 +100,12 @@ public class UserHelp {
         return (int) get(SpCode.STAT, 1);
     }
 
+
     /**
      * 更新用户信息
      */
     public static void updateUser(UserBean bean) {
-        put(SpCode.USERID, bean.getId());
+        put(SpCode.USERID, bean.getId()+"");
         put(SpCode.INVITATIONOK, bean.getInvitationOk());
         put(SpCode.USERNAME, bean.getUsername());
         put(SpCode.USERNLANCE, bean.getBalance());
@@ -105,6 +119,30 @@ public class UserHelp {
         put(SpCode.FRIENDMONEY, bean.getFriendMoney());
         put(SpCode.STAT, bean.getStat());
         put(SpCode.COUNTRYCODE, bean.getCountryCode());
+    }
+
+    /**
+     * 更新用户信息
+     */
+    public static void updateBaseUser(BaseUserBean bean) {
+        put(SpCode.UID, bean.uid);
+        put(SpCode.USERPHONE, bean.phone);
+        put(SpCode.MAIL, bean.mail);
+        put(SpCode.RSBALANCE, bean.rsBalance);
+        put(SpCode.INVITECODE, bean.invitationCode);
+        put(SpCode.TELEGRAM, bean.telegram);
+    }
+
+    /**
+     * 更新用户信息
+     */
+    public static void updateBaseUser(BaseUserInfoBean bean) {
+        put(SpCode.UID, bean.uid);
+        put(SpCode.USERID, bean.userId + "");
+        put(SpCode.USERPHONE, bean.phone);
+        put(SpCode.MAIL, bean.email);
+        put(SpCode.RSBALANCE, bean.balance);
+        put(SpCode.TELEGRAM, bean.telegram);
     }
 
     public static void updateToken(String token){

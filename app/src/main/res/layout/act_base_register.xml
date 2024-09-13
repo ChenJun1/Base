@@ -23,7 +23,7 @@
             android:id="@+id/iv_back"
             android:layout_width="24dp"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
             android:src="@drawable/icon_pic_back" />
 
     </RelativeLayout>
@@ -91,8 +91,8 @@
             android:textColor="@color/base_main_text"
             android:gravity="center"
             android:background="@drawable/bg_pic_radius1"
-            android:text="Get CAPTCHA"
-            android:layout_width="100dp"
+            android:text="Get OTP"
+            android:layout_width="80dp"
             android:layout_height="40dp"/>
 
 
@@ -110,7 +110,7 @@
         android:gravity="center_vertical"
         android:hint="@string/str_him_login_2"
         android:inputType="text"
-        android:maxLength="30"
+        android:maxLength="20"
         android:paddingLeft="5dp"
         android:text=""
         android:textColor="#333333"
@@ -128,8 +128,8 @@
         android:background="@drawable/bg_pic_radius1"
         android:gravity="center_vertical"
         android:hint="@string/str_him_login_4"
-        android:inputType="text"
-        android:maxLength="30"
+        android:inputType="number"
+        android:maxLength="6"
         android:paddingLeft="5dp"
         android:text=""
         android:textColor="#333333"
@@ -148,8 +148,8 @@
         android:layout_weight="1"
         android:background="@drawable/bg_pic_radius1"
         android:hint="@string/str_him_login_3"
-        android:inputType="phone"
-        android:maxLength="7"
+        android:inputType="number"
+        android:maxLength="8"
         android:textColor="#333333"
         android:textCursorDrawable="@drawable/my_cursor"
         android:textSize="16sp" />

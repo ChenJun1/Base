@@ -19,6 +19,7 @@ import androidx.annotation.RequiresApi;
 
 import com.base.kiap.R;
 import com.base.kiap.base.BaseMvpActivity;
+import com.base.kiap.bean.base.BaseUserBean;
 import com.base.kiap.bean.oldbean.UserBean;
 import com.base.kiap.bean.request.LoginBean;
 import com.base.kiap.config.SpCode;
@@ -38,7 +39,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class BaseLoginActivity extends BaseMvpActivity<IBaseLoginView, BaseLoginPresenter> implements ILoginView {
+public class BaseLoginActivity extends BaseMvpActivity<IBaseLoginView, BaseLoginPresenter> implements IBaseLoginView {
 
 
     private ActBaseLoginBinding binding;
@@ -124,6 +125,18 @@ public class BaseLoginActivity extends BaseMvpActivity<IBaseLoginView, BaseLogin
                 }
             }
         });
+        binding.tvRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BaseRegisterActivity.start(BaseLoginActivity.this);
+            }
+        });
+        binding.tvRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BaseRegisterActivity.start(BaseLoginActivity.this);
+            }
+        });
     }
 
     @OnClick({R.id.bt_login})
@@ -178,58 +191,24 @@ public class BaseLoginActivity extends BaseMvpActivity<IBaseLoginView, BaseLogin
         return false;
     }
 
+
     @Override
-    public void onLoginSuccess(UserBean bean) {
-        UserHelp.updateUser(bean);
-        UserHelp.updateToken(bean.getToken());
+    public void onHideDialog() {
+        hideLoading();
+        binding.btLogin.setEnabled(true);
+    }
+
+    @Override
+    public void onLoginSuccess(BaseUserBean bean) {
+        UserHelp.updateBaseUser(bean);
+        UserHelp.updateToken(bean.token);
         MainActivity.start(this);
         finish();
     }
 
     @Override
-    public void onHideDialog() {
-        hideLoading();
+    public void onRegisterSuccess(BaseUserBean bean) {
+
     }
 
-    public class CountDownTimerUtils extends CountDownTimer {
-        private WeakReference<TextView> mTextView;
-
-        public CountDownTimerUtils(TextView textView, long millisInFuture, long countDownInterval) {
-            super(millisInFuture, countDownInterval);
-            this.mTextView = new WeakReference(textView);
-        }
-
-        @RequiresApi(api = Build.VERSION_CODES.M)
-        @Override
-        public void onTick(long millisUntilFinished) {
-            //用弱引用 先判空 避免崩溃
-            if (mTextView.get() == null) {
-                cancle();
-                return;
-            }
-            mTextView.get().setClickable(false); //设置不可点击
-            mTextView.get().setText(millisUntilFinished / 999 + " S"); //设置倒计时时间
-            mTextView.get().setTextColor(getColor(R.color.color_bd));
-
-        }
-
-        @RequiresApi(api = Build.VERSION_CODES.M)
-        @Override
-        public void onFinish() {
-            //用软引用 先判空 避免崩溃
-            if (mTextView.get() == null) {
-                cancle();
-                return;
-            }
-            mTextView.get().setText(R.string.str_login_send);
-            mTextView.get().setClickable(true);//重新获得点击
-            mTextView.get().setTextColor(getColor(R.color.color_font_black_00));
-        }
-
-        public void cancle() {
-            if (this != null) {
-                this.cancel();
-            }
-        }
-    }
 }

@@ -106,6 +106,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/tv_day"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -150,6 +151,7 @@
                             android:src="@drawable/dark_coin" />
 
                         <TextView
+                            android:id="@+id/tv_money_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
@@ -173,6 +175,7 @@
                             android:src="@drawable/dark_coin" />
 
                         <TextView
+                            android:id="@+id/tv_money_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
@@ -196,6 +199,7 @@
                             android:src="@drawable/dark_coin" />
 
                         <TextView
+                            android:id="@+id/tv_money_3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
@@ -219,6 +223,7 @@
                             android:src="@drawable/dark_coin" />
 
                         <TextView
+                            android:id="@+id/tv_money_4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
@@ -242,6 +247,7 @@
                             android:src="@drawable/dark_coin" />
 
                         <TextView
+                            android:id="@+id/tv_money_5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
@@ -271,6 +277,7 @@
 
 
                     <TextView
+                        android:id="@+id/tv_money_k_1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -280,6 +287,7 @@
                         android:textSize="@dimen/text_nom" />
 
                     <TextView
+                        android:id="@+id/tv_money_k_2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -289,6 +297,7 @@
                         android:textSize="@dimen/text_nom" />
 
                     <TextView
+                        android:id="@+id/tv_money_k_3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -298,6 +307,7 @@
                         android:textSize="@dimen/text_nom" />
 
                     <TextView
+                        android:id="@+id/tv_money_k_4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -307,6 +317,7 @@
                         android:textSize="@dimen/text_nom" />
 
                     <TextView
+                        android:id="@+id/tv_money_k_5"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -333,6 +344,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/tv_sw_status"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -378,6 +390,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:id="@+id/inTransactionWithdrawAmountTotal"
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -417,6 +430,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:id="@+id/todayWithdrawSuccessAmountTotal"
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"

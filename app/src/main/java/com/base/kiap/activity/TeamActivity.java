@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.base.kiap.R;
-import com.base.kiap.adapter.TeamAdapter;
+import com.base.kiap.adapter.BaseTeamAdapter;
 import com.base.kiap.base.BaseMvpActivity;
 import com.base.kiap.bean.dao.MessageBean;
 import com.base.kiap.config.Constants;
@@ -50,7 +50,7 @@ public class TeamActivity extends BaseMvpActivity<IMessgListView, MessgListPrese
         context.startActivity(starter);
     }
 
-    private TeamAdapter adapter;
+    private BaseTeamAdapter adapter;
     private List<MessageBean> mList = new ArrayList<>();
 
     @Override
@@ -70,7 +70,7 @@ public class TeamActivity extends BaseMvpActivity<IMessgListView, MessgListPrese
     }
 
     private void initRv() {
-        adapter = new TeamAdapter();
+        adapter = new BaseTeamAdapter();
         adapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,
                 LinearLayoutManager.VERTICAL, false);

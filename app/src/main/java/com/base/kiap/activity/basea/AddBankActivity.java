@@ -2,35 +2,19 @@ package com.base.kiap.activity.basea;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.Editable;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.base.kiap.R;
-import com.base.kiap.activity.TeamDetailActivity;
-import com.base.kiap.adapter.TeamAdapter;
 import com.base.kiap.base.BaseMvpActivity;
-import com.base.kiap.bean.dao.MessageBean;
-import com.base.kiap.config.Constants;
+import com.base.kiap.bean.base.request.AddBankRequest;
+import com.base.kiap.config.UserHelp;
 import com.base.kiap.databinding.ActBaseAddBankBinding;
-import com.base.kiap.databinding.ActBaseAddToolBinding;
-import com.base.kiap.databinding.ActBasePayPassBinding;
 import com.base.kiap.mvp.basepresenter.BaseAddBankPresenter;
 import com.base.kiap.mvp.baseviwe.IBaseAddBankView;
-import com.base.kiap.mvp.iview.IMessgListView;
-import com.base.kiap.mvp.presenter.MessgListPresenter;
-import com.base.kiap.utlis.RecyclerViewLoadUtil;
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnRefreshLoadmoreListener;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.base.kiap.utlis.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -61,8 +45,31 @@ public class AddBankActivity extends BaseMvpActivity<IBaseAddBankView, BaseAddBa
     protected void initData() {
         tvTitle.setText("Add Bank");
         initImmersionBar();
-//        showLoading();
 
+        binding.btSavePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showLoading();
+                String userName = binding.etPass.getText().toString();
+                String bankName = binding.etPass2.getText().toString();
+                String bankAccount = binding.etNumber.getText().toString();
+                String ifsc = binding.etOtp.getText().toString();
+                String address = binding.address.getText().toString();
+                if (userName.isEmpty() || bankName.isEmpty() || bankAccount.isEmpty()
+                ||ifsc.isEmpty() || address.isEmpty()) {
+                    ToastUtil.normal("Input Error");
+                }else{
+                    AddBankRequest request = new AddBankRequest();
+                    request.address = address;
+                    request.userName = userName;
+                    request.userId = Integer.parseInt(UserHelp.getUserId());
+                    request.bankAccount = bankAccount;
+                    request.bankName = bankName;
+                    request.ifsc = ifsc;
+                    getPresenter().onAddBank(request);
+                }
+            }
+        });
     }
 
 
@@ -74,6 +81,8 @@ public class AddBankActivity extends BaseMvpActivity<IBaseAddBankView, BaseAddBa
 
     @Override
     public void onSuccess() {
+        finish();
+        ToastUtil.normal("Success");
 
     }
 

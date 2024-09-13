@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="18dp"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_weight="7"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BankName "
+            android:textColor="@color/base_main7"
+            android:textSize="@dimen/text_nom" />
+        <TextView
+            android:layout_alignParentRight="true"
+            android:id="@+id/bankName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="6dp"
+            android:textColor="@color/base_text_bla"
+            android:textSize="@dimen/text_item_16" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_weight="7"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BankAccount"
+            android:textColor="@color/base_main7"
+            android:textSize="@dimen/text_nom" />
+        <TextView
+            android:layout_alignParentRight="true"
+            android:id="@+id/bankAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="6dp"
+            android:textColor="@color/base_text_bla"
+            android:textSize="@dimen/text_item_16" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_weight="7"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IFSC"
+            android:textColor="@color/base_main7"
+            android:textSize="@dimen/text_nom" />
+        <TextView
+            android:layout_alignParentRight="true"
+            android:id="@+id/ifsc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="6dp"
+            android:textColor="@color/base_text_bla"
+            android:textSize="@dimen/text_item_16" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_weight="7"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textColor="@color/base_main7"
+            android:textSize="@dimen/text_nom" />
+        <TextView
+            android:layout_alignParentRight="true"
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="6dp"
+            android:text=""
+            android:textColor="@color/base_text_bla"
+            android:textSize="@dimen/text_item_16" />
+    </RelativeLayout>
+
+    <View
+        android:background="@color/base_main_view"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+
+</LinearLayout>

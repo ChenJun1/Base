@@ -117,6 +117,7 @@
                                 android:textSize="@dimen/text_nom" />
 
                             <TextView
+                                android:id="@+id/myTotalCommissions"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
@@ -148,6 +149,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/myYesterdayCommissions"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_com1"
@@ -167,6 +169,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/myTodayCommissions"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_com2"
@@ -190,12 +193,13 @@
                             android:id="@+id/tv_com3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Team Cout"
+                            android:text="Team Count"
                             android:textColor="@color/base_text_bla2"
                             android:textSize="@dimen/text_min2"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/teamCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_com3"
@@ -215,6 +219,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/todayNewTeam"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_com4"
@@ -258,6 +263,7 @@
                     android:textSize="@dimen/text_item_16" />
 
                 <TextView
+                    android:id="@+id/invitationLink"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"

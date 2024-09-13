@@ -62,4 +62,25 @@ public class BaseUserInfoPresenter extends BasePresenter<IBaseUserInfoView> {
                 });
     }
 
+    public void onOut() {
+        mStriation.addSubStriation(ApiFactory.retrofit().create(BasePostApi.class).logout(),
+                new ApiCallBack<BaseResult<Object>>() {
+                    @Override
+                    public void onSuccess(BaseResult<Object> model) {
+                        getView().onOutSuccess();
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+                        ToastUtil.error(msg);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        super.onFinish();
+                        getView().onHideDialog();
+                    }
+                });
+    }
+
 }

@@ -118,7 +118,7 @@ public class MainActivity extends BaseMvpActivity {
 //        }
         getLifecycle().addObserver(mPostHttp);
         initFragments();
-//        mPostHttp.findUser();
+        mPostHttp.findBasUser();
 //        if (!UserHelp.isLogin()||UserHelp.getSTAT()==2) {
 //            LoginActivity.start(this);
 //            finish();
@@ -270,7 +270,7 @@ public class MainActivity extends BaseMvpActivity {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(ReshMainEvent reshMainEvent) {
-        mPostHttp.findUser();
+        mPostHttp.findBasUser();
     }
 
     @Override

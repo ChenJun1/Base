@@ -10,8 +10,16 @@ import com.base.kiap.bean.base.BaseUserBean;
 import com.base.kiap.bean.base.BaseUserInfoBean;
 import com.base.kiap.bean.base.BaseTeamIndexInfoBean;
 import com.base.kiap.bean.base.BaseWithdrawBean;
-import com.base.kiap.bean.base.request.PayoutOrder;
+import com.base.kiap.bean.base.DepositInrHistoryBean;
+import com.base.kiap.bean.base.DepositInrInfoBean;
+import com.base.kiap.bean.base.DepositUsdtInfoBean;
+import com.base.kiap.bean.base.request.InrBuyRequest;
+import com.base.kiap.bean.base.request.InrListRequest;
+import com.base.kiap.bean.base.request.AddBankRequest;
+import com.base.kiap.bean.base.request.PinRequest;
+import com.base.kiap.bean.base.request.RegisterRequest;
 import com.base.kiap.bean.request.BaseResult;
+import com.base.kiap.bean.base.request.TeamDetailRequest;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -31,35 +39,33 @@ public interface BasePostApi {
     @POST("/login")//登陆
     @FormUrlEncoded
     Observable<BaseResult<BaseUserBean>> login(@FieldMap LinkedHashMap<String, Object> map);
+    @POST("/logout")
+    Observable<BaseResult<Object>> logout();
 
-    @POST("/user/regSmsCode")//获取验证码
+    @POST("/regSmsCode")//获取验证码
     @FormUrlEncoded
     Observable<BaseResult<Integer>> registerCode(@FieldMap LinkedHashMap<String, Object> map);
 
 
-    @POST("/user/smsCode")//获取验证码
+    @POST("smsCode")//获取验证码
     @FormUrlEncoded
-    Observable<BaseResult<Integer>> smsCode(@FieldMap LinkedHashMap<String, Object> map);
+    Observable<BaseResult<Object>> smsCode(@FieldMap LinkedHashMap<String, Object> map);
 
-    @POST("/user/code")//注册
-    @FormUrlEncoded
-    Observable<BaseResult<Integer>> register(@FieldMap LinkedHashMap<String, Object> map);
+    @POST("/register")//注册
+    Observable<BaseResult<BaseUserBean>> register(@Body RegisterRequest map);
 
     @POST("/banner")//banner
-    @FormUrlEncoded
-    Observable<BaseResult<BaseBannerBean>> banner();
+    Observable<BaseResult<List<BaseBannerBean>>> banner();
 
     @POST("/index")//首页
     @FormUrlEncoded
     Observable<BaseResult<BaseIndexBean>> indexData(@FieldMap LinkedHashMap<String, Object> map);
 
     @POST("/user/index")//个人中心
-    @FormUrlEncoded
     Observable<BaseResult<BaseUserInfoBean>> userInfo();
 
     @POST("/user/setPayPwd")//修改支付密码
-    @FormUrlEncoded
-    Observable<BaseResult<Object>> updatePayPwd(@FieldMap LinkedHashMap<String, Object> map);
+    Observable<BaseResult<Object>> updatePayPwd(@Body PinRequest request);
 
     @POST("/user/setLoginPwd")//修改登录密码
     @FormUrlEncoded
@@ -69,20 +75,16 @@ public interface BasePostApi {
     @FormUrlEncoded
     Observable<BaseResult<BaseUserBean>> forgetPass(@FieldMap LinkedHashMap<String, Object> map);
 
-    @POST("/bank")//添加银行卡
-    @FormUrlEncoded
-    Observable<BaseResult<Object>> addBank(@FieldMap LinkedHashMap<String, Object> map);
+    @POST("/bank/create")//添加银行卡
+    Observable<BaseResult<Object>> addBank(@Body AddBankRequest map);
 
-    @POST("/bank")//修改银行卡
-    @FormUrlEncoded
-    Observable<BaseResult<Object>> updateBank(@FieldMap LinkedHashMap<String, Object> map);
+    @POST("/bank/update")//修改银行卡
+    Observable<BaseResult<Object>> updateBank(@Body AddBankRequest map);
 
-    @POST("/bank")//删除银行卡
-    @FormUrlEncoded
-    Observable<BaseResult<Object>> deleteBank(@FieldMap LinkedHashMap<String, Object> map);
+    @POST("/bank/delete")//删除银行卡
+    Observable<BaseResult<Object>> deleteBank(@Body BaseBankInfoBean map);
 
     @POST("/bank/list")//银行卡list
-    @FormUrlEncoded
     Observable<BaseResult<List<BaseBankInfoBean>>> bankList();
 
 
@@ -121,8 +123,7 @@ public interface BasePostApi {
 
 
     @POST("/usdt")//创建usdt充值订单
-    @FormUrlEncoded
-    Observable<BaseResult<Object>> onCreateUsdtOrder(@FieldMap LinkedHashMap<String, Object> map);
+    Observable<BaseResult<DepositUsdtInfoBean>> onCreateUsdtOrder();
 
     @POST("/usdt/orderId")//根据订单号查询usdt充值订单
     @FormUrlEncoded
@@ -130,13 +131,12 @@ public interface BasePostApi {
 
     @POST("/usdt/order/list")//查询用户的usdt订单列表
     @FormUrlEncoded
-    Observable<BaseResult<List<BaseUsdtOrderBean>>> getUsdtOrderList(@FieldMap LinkedHashMap<String, Object> map);
+    Observable<BaseResult<List<DepositInrHistoryBean>>> getUsdtOrderList(@FieldMap LinkedHashMap<String, Object> map);
 
 
 
     @POST("/team/detail")//Team的Detail
-    @FormUrlEncoded
-    Observable<BaseResult<List<BaseTeamDetailBean>>> getTeamDetailList(@FieldMap LinkedHashMap<String, Object> map);
+    Observable<BaseResult<List<BaseTeamDetailBean>>> getTeamDetailList(@Body TeamDetailRequest map);
 
     @POST("/team/index")//Team的index页面
     @FormUrlEncoded
@@ -148,21 +148,18 @@ public interface BasePostApi {
     @FormUrlEncoded
     Observable<BaseResult<Object>> onCreateRechargeMoney(@FieldMap LinkedHashMap<String, Object> map);
 
-    @POST("/money/payoutOrder")//createPayoutOrder
-    @FormUrlEncoded
-    Observable<BaseResult<Object>> onCreatePayoutOrder(@Body PayoutOrder user);
+    @POST("/money/create")//createPayoutOrder
+    Observable<BaseResult<Object>> onCreatePayoutOrder(@Body InrBuyRequest user);
 
     @POST("/money/list")//卢比充值列表页面数据
-    @FormUrlEncoded
-    Observable<BaseResult<BaseWithdrawBean>> geMoneyOrderInfo(@FieldMap LinkedHashMap<String, Object> map);
+    Observable<BaseResult<List<DepositInrInfoBean>>> geMoneyOrderInfo(@Body InrListRequest request);
 
     @POST("/money/orderId")//根据订单号查询卢比充值订单
-    @FormUrlEncoded
     Observable<BaseResult<List<BaseWithdrawBean>>> getMoneyOrder(@FieldMap LinkedHashMap<String, Object> map);
 
     @POST("/money/order/list")//根据订单号查询卢比充值订单
     @FormUrlEncoded
-    Observable<BaseResult<List<BaseWithdrawBean>>> getMoneyOrderList(@FieldMap LinkedHashMap<String, Object> map);
+    Observable<BaseResult<List<DepositInrHistoryBean>>> getMoneyHistoryOrderList(@FieldMap LinkedHashMap<String, Object> map);
 
 
 

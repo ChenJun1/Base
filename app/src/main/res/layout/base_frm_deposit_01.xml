@@ -51,7 +51,7 @@
         android:layout_marginTop="10dp">
 
         <TextView
-            android:id="@+id/tv_l1"
+            android:id="@+id/tv_quota"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="5dp"
-            android:layout_toEndOf="@+id/tv_l1"
+            android:layout_toEndOf="@+id/tv_quota"
             android:text="INR"
             android:textColor="@color/base_text_bla"
             android:textSize="@dimen/text_min2" />
@@ -81,59 +81,78 @@
         android:layout_width="match_parent"
         android:layout_height="10dp"/>
     
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/top_03"
         android:layout_below="@+id/view_01"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Spinner
+            android:layout_alignParentStart="true"
             android:id="@+id/spinner"
-            android:layout_weight="0.8"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"/>
-        
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:orientation="horizontal"
-            android:layout_weight="1.3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/ed_min"
-                android:layout_width="80dp"
-                android:layout_height="32dp"
-                android:background="@drawable/edittext_underline"
-                android:padding="8dp" />
+            <RelativeLayout
+                android:layout_toStartOf="@+id/ll_query"
+                android:layout_toRightOf="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_marginHorizontal="5dp"
-                android:textStyle="bold"
-                android:textSize="30sp"
-                android:textColor="@color/base_text_bla"
-                android:text="-"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"/>
+                <EditText
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/view_l"
+                    android:id="@+id/ed_min"
+                    android:minWidth="80dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:maxLines="1"
+                    android:background="@drawable/edittext_underline" />
 
-            <EditText
-                android:id="@+id/ed_max"
-                android:layout_width="80dp"
-                android:layout_height="32dp"
-                android:background="@drawable/edittext_underline"
-                android:padding="8dp" />
+                <TextView
+                    android:id="@+id/view_l"
+                    android:layout_centerInParent="true"
+                    android:layout_marginHorizontal="5dp"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:textColor="@color/base_text_bla"
+                    android:text="-"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-            <ImageView
-                android:layout_marginStart="20dp"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_alignParentStart="true"
+                <EditText
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/view_l"
+                    android:minWidth="80dp"
+                    android:id="@+id/ed_max"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:maxLines="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:background="@drawable/edittext_underline" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_query"
+                android:paddingHorizontal="18dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/search" />
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/search" />
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
-        
-    </LinearLayout>
+            </LinearLayout>
+
+    </RelativeLayout>
 
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout

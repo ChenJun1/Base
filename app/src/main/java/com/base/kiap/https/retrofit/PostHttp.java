@@ -4,6 +4,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 
+import com.base.kiap.bean.base.BaseUserInfoBean;
 import com.base.kiap.bean.oldbean.ConfigBean;
 import com.base.kiap.bean.oldbean.UserBean;
 import com.base.kiap.bean.event.ConfigEvent;
@@ -52,6 +53,35 @@ public class PostHttp implements LifecycleObserver {
                             UserBean bean = model.data;
                             if (bean != null) {
                                 UserHelp.updateUser(bean);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+                        ToastUtil.error(msg);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        super.onFinish();
+                    }
+                });
+    }
+
+    /**
+     * 获取用户信息
+     */
+    public void findBasUser() {
+
+        mStriation.addSubStriation(ApiFactory.retrofit().create(BasePostApi.class).userInfo(),
+                new ApiCallBack<BaseResult<BaseUserInfoBean>>() {
+                    @Override
+                    public void onSuccess(BaseResult<BaseUserInfoBean> model) {
+                        if (model != null) {
+                            BaseUserInfoBean bean = model.data;
+                            if (bean != null) {
+                                UserHelp.updateBaseUser(bean);
                             }
                         }
                     }

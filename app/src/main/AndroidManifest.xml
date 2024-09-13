@@ -16,7 +16,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" /><!--适配android 11 获取包信息-->
     <uses-permission
         android:name="android.permission.READ_LOGS"
@@ -31,8 +32,8 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="false"
-        tools:replace="android:supportsRtl"
         android:theme="@style/AppTheme"
+        tools:replace="android:supportsRtl"
         tools:targetApi="n">
 
         <!--        <queries>-->
@@ -73,27 +74,20 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".activity.basea.BaseLoginActivity"
+        <activity
+            android:name=".activity.basea.BaseLoginActivity"
+            android:launchMode="singleTask"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
 
-            </intent-filter>
         </activity>
         <activity
             android:name="com.base.kiap.activity.basea.MainActivity"
+            android:exported="true"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="happyearn.com"
-                    android:scheme="happy" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -123,55 +117,88 @@
         <activity
             android:name="com.base.kiap.activity.WebActivity2"
             android:screenOrientation="portrait" />
-        <activity android:name="com.base.kiap.activity.MessgListActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.base.kiap.activity.MessgDetailActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.base.kiap.activity.FAQActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.base.kiap.activity.FaqDetailActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.base.kiap.activity.RechargeUsdtActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.base.kiap.activity.MemeberListActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.base.kiap.activity.ExchangeDetailActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.base.kiap.activity.ExtractUsdtActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.base.kiap.activity.HelpActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.base.kiap.activity.HelpDetailActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.base.kiap.activity.TeamDetailActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.base.kiap.activity.TeamActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.basea.UserInfoActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.basea.QuotaHistoryActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.basea.DepositHistoryActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.basea.WithdrawHistoryActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.basea.InBoxActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.basea.BaseTeamDetailActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.basea.AddBankActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.basea.AddToolActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.basea.BasePassActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.basea.ServiceActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.basea.BasePinCodeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.basea.AddToolSetpActivity"
-            android:screenOrientation="portrait"/>
-<!--        <activity android:name=".activity.basea.BaseLoginActivity" />-->
+        <activity
+            android:name="com.base.kiap.activity.MessgListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.base.kiap.activity.MessgDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.base.kiap.activity.FAQActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.base.kiap.activity.FaqDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.base.kiap.activity.RechargeUsdtActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.base.kiap.activity.MemeberListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.base.kiap.activity.ExchangeDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.base.kiap.activity.ExtractUsdtActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.base.kiap.activity.HelpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.base.kiap.activity.HelpDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.base.kiap.activity.TeamDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.base.kiap.activity.TeamActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.BaseUserInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.QuotaHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.DepositHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.WithdrawHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.InBoxActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.BaseTeamDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.AddBankActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.AddToolActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.BasePassActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.ServiceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.BasePinCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.AddToolSetpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.DepositHistoryDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.BaseRegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.basea.EditBankActivity"
+            android:screenOrientation="portrait" />
+        <!--        <activity android:name=".activity.basea.BaseLoginActivity" />-->
     </application>
 
 </manifest>

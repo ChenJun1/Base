@@ -45,6 +45,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (attachLayoutView() != null) {
+            setContentView(attachLayoutView());
+        } else
         if (attachLayoutRes()!=0) {
             setContentView(attachLayoutRes());
         }
@@ -62,7 +65,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         initData();
 
     }
-
+    public View attachLayoutView(){
+        return null;
+    }
     protected View getStatusView() {
         return statusBarView;
     }

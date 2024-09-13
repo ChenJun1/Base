@@ -486,5 +486,6 @@
     <string name="str_order_detail_createTime">Create Time:</string>
     <string name="str_order_detail_transactionTime">Transaction Time:</string>
     <string name="str_order_detail_transactionStatus">Transaction Status:</string>
+    <string name="str_no_more">No more</string>
 
 </resources>

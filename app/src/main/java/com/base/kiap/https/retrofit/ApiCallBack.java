@@ -1,12 +1,16 @@
 package com.base.kiap.https.retrofit;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.widget.Toast;
 
 import com.base.kiap.BuildConfig;
 import com.base.kiap.R;
+import com.base.kiap.activity.basea.BaseLoginActivity;
 import com.base.kiap.config.AppConfig;
 import com.base.kiap.bean.request.BaseResult;
+import com.base.kiap.utlis.SPUtils;
 
 import java.net.SocketException;
 import java.net.UnknownHostException;
@@ -33,40 +37,41 @@ public abstract class ApiCallBack<M> extends DisposableObserver<M> {
     public static final int NETWORD_504 = 504;
     public static final int NETWORD_502 = 502;
     public static final int NETWORD_404 = 404;
+    public static final String NETWORD_1018 = "1018";//账户不存在
+    public static final String NETWORD_211 = "211";//token 过期
 
     @Override
     public void onNext(M m) {
-        Toast.makeText(AppConfig.INSTANCE.getApplication(), "onSuccess error", Toast.LENGTH_SHORT).show();
         try {
             BaseResult baseResult = (BaseResult) m;
             if (baseResult.isSuccess()) {
-                Toast.makeText(AppConfig.INSTANCE.getApplication(), "onSuccess error", Toast.LENGTH_SHORT).show();
-                onSuccess(m);
-                return;
-            } else if (baseResult.status == 500) {
+                if ("0".equals(baseResult.statusCode)) {
+                    onSuccess(m);
+                }else{
+                    if(NETWORD_211.equals(baseResult.statusCode) || NETWORD_1018.equals(baseResult.statusCode)){//用户无效,清除用户然后退到登录界面
+                        SPUtils.clear();
+                        Context context = AppConfig.INSTANCE.getApplication();
+                        Intent intent = new Intent();
+                        intent.setClass(context, BaseLoginActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(intent);
+                        return;
+                    }
+                    if(baseResult.status == 34){//版本更新提示
+                        BaseLoginActivity.start(AppConfig.INSTANCE.getApplication());
+                        return;
+                    }
+                    onFailure(baseResult.statusInfo);
+                }
+            } else if (baseResult.status == 500 || baseResult.status == 415 ||  baseResult.status == 404) {
                 Toast.makeText(AppConfig.INSTANCE.getApplication(), "server error", Toast.LENGTH_SHORT).show();
                 if (BuildConfig.DEBUG) {
                     onFailure(AppConfig.INSTANCE.getApplication().getString(R.string.app_name));
                 }
-                return;
+                onFinish();
             }else {
-//                if(baseResult.code == 33){//用户无效,清除用户然后退到登录界面
-//                    SPUtils.clear();
-//                    Context context = AppConfig.INSTANCE.getApplication();
-//                    Intent intent = new Intent();
-//                    intent.setClass(context, LoginActivity.class);
-//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                    context.startActivity(intent);
-//                    return;
-//                }
-//                if(baseResult.code == 34){//版本更新提示
-//
-//                    LoginActivity.start();
-//                    return;
-//                }
                 onFailure(baseResult.statusInfo);
             }
-            return;
         } catch (Exception e) {
             e.printStackTrace();
         }

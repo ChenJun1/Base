@@ -11,4 +11,5 @@ import com.base.kiap.bean.base.BaseUserInfoBean;
 public interface IBaseUserInfoView extends IBaseView {
 
     void onUserInfo(BaseUserInfoBean bean);
+    void onOutSuccess();
 }

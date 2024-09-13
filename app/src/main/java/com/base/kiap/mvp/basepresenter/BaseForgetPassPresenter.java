@@ -64,5 +64,30 @@ public class BaseForgetPassPresenter extends BasePresenter<IForgetPassView> {
                 });
     }
 
+    public void onCodeSms(String password) {
+        LinkedHashMap<String, Object> map = new LinkedHashMap<>();
+        map.put("phone", password);
+        mStriation.addSubStriation(ApiFactory.retrofit().create(BasePostApi.class).smsCode(map),
+                new ApiCallBack<BaseResult<Object>>() {
+                    @Override
+                    public void onSuccess(BaseResult<Object> model) {
+                        ToastUtil.success(model.statusInfo);
+                        UserHelp.setPayPassword(password);
+                        getView().onSuccess();
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+                        ToastUtil.error(msg);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        super.onFinish();
+                        getView().onHideDialog();
+                    }
+                });
+    }
+
 
 }

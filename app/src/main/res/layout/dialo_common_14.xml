@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iv_close"
-                android:background="@drawable/dialog_bg_001"
+                android:background="@drawable/dialog_pic_006"
                 android:orientation="vertical">
 
                 <TextView

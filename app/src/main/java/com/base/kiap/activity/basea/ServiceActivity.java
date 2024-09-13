@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.base.kiap.R;
 import com.base.kiap.activity.TeamDetailActivity;
-import com.base.kiap.adapter.TeamAdapter;
+import com.base.kiap.adapter.BaseTeamAdapter;
 import com.base.kiap.base.BaseMvpActivity;
 import com.base.kiap.bean.dao.MessageBean;
 import com.base.kiap.config.Constants;
@@ -52,7 +52,7 @@ public class ServiceActivity extends BaseMvpActivity<IMessgListView, MessgListPr
         context.startActivity(starter);
     }
 
-    private TeamAdapter adapter;
+    private BaseTeamAdapter adapter;
     private List<MessageBean> mList = new ArrayList<>();
 
     @Override
@@ -72,7 +72,7 @@ public class ServiceActivity extends BaseMvpActivity<IMessgListView, MessgListPr
     }
 
     private void initRv() {
-        adapter = new TeamAdapter();
+        adapter = new BaseTeamAdapter();
         adapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,
                 LinearLayoutManager.VERTICAL, false);

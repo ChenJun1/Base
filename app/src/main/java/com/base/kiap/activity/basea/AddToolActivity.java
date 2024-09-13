@@ -7,14 +7,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.base.kiap.R;
-import com.base.kiap.adapter.TeamAdapter;
+import com.base.kiap.adapter.BaseTeamAdapter;
 import com.base.kiap.base.BaseMvpActivity;
 import com.base.kiap.bean.dao.MessageBean;
 import com.base.kiap.databinding.ActBaseAddToolBinding;
-import com.base.kiap.databinding.ActBasePayPassBinding;
 import com.base.kiap.mvp.iview.IMessgListView;
 import com.base.kiap.mvp.presenter.MessgListPresenter;
-import com.base.kiap.utlis.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +34,7 @@ public class AddToolActivity extends BaseMvpActivity<IMessgListView, MessgListPr
         context.startActivity(starter);
     }
 
-    private TeamAdapter adapter;
+    private BaseTeamAdapter adapter;
     private List<MessageBean> mList = new ArrayList<>();
     private ActBaseAddToolBinding binding;
     @Override

@@ -11,12 +11,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.base.kiap.R;
-import com.base.kiap.adapter.TeamAdapter;
+import com.base.kiap.adapter.BaseTeamAdapter;
+import com.base.kiap.adapter.BaseTeamDetailAdapter;
 import com.base.kiap.base.BaseMvpActivity;
+import com.base.kiap.bean.base.BaseTeamDetailBean;
 import com.base.kiap.bean.dao.MessageBean;
 import com.base.kiap.config.Constants;
-import com.base.kiap.databinding.ActBaseDepositListBinding;
 import com.base.kiap.databinding.ActBaseTeamDetailListBinding;
+import com.base.kiap.mvp.basepresenter.BaseTeamDetailPresenter;
+import com.base.kiap.mvp.baseviwe.IBaseTeamDetailView;
 import com.base.kiap.mvp.iview.IMessgListView;
 import com.base.kiap.mvp.presenter.MessgListPresenter;
 import com.base.kiap.utlis.RecyclerViewLoadUtil;
@@ -35,7 +38,7 @@ import butterknife.OnClick;
 /**
 
  */
-public class BaseTeamDetailActivity extends BaseMvpActivity<IMessgListView, MessgListPresenter> implements IMessgListView {
+public class BaseTeamDetailActivity extends BaseMvpActivity<IBaseTeamDetailView, BaseTeamDetailPresenter> implements IBaseTeamDetailView {
     @BindView(R.id.iv_back)
     ImageView ivBack;
     @BindView(R.id.tv_title)
@@ -52,8 +55,11 @@ public class BaseTeamDetailActivity extends BaseMvpActivity<IMessgListView, Mess
         context.startActivity(starter);
     }
     private ActBaseTeamDetailListBinding binding;
-    private TeamAdapter adapter;
-    private List<MessageBean> mList = new ArrayList<>();
+    private BaseTeamDetailAdapter adapter;
+    private List<BaseTeamDetailBean> mList = new ArrayList<>();
+
+    private int type = 1;
+    private int page = 1;
 
     @Override
     protected int attachLayoutRes() {
@@ -67,18 +73,16 @@ public class BaseTeamDetailActivity extends BaseMvpActivity<IMessgListView, Mess
 
     @Override
     protected void initData() {
-        tvTitle.setText("Message");
+        tvTitle.setText("Team Detail");
         initImmersionBar();
-//        showLoading();
-        MessageBean bean = new MessageBean();
-        mList.add(bean);
-        mList.add(bean);
         initTabs();
         initRv();
+        showLoading();
+        getPresenter().getDetailList(type,page);
     }
 
     private void initRv() {
-        adapter = new TeamAdapter();
+        adapter = new BaseTeamDetailAdapter();
         adapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,
                 LinearLayoutManager.VERTICAL, false);
@@ -91,18 +95,14 @@ public class BaseTeamDetailActivity extends BaseMvpActivity<IMessgListView, Mess
         refreshLayout.setOnRefreshLoadmoreListener(new OnRefreshLoadmoreListener() {
             @Override
             public void onLoadmore(RefreshLayout refreshlayout) {
+                getPresenter().getDetailList(type,page+1);
             }
 
             @Override
             public void onRefresh(RefreshLayout refreshlayout) {
                 refreshLayout.finishRefresh(Constants.RefreshTime, true);
                 showLoading();
-            }
-        });
-        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                com.base.kiap.activity.TeamDetailActivity.start(BaseTeamDetailActivity.this);
+                getPresenter().getDetailList(type,page);
             }
         });
     }
@@ -114,6 +114,17 @@ public class BaseTeamDetailActivity extends BaseMvpActivity<IMessgListView, Mess
         binding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                switch (tab.getPosition()) {
+                    case 0:
+                        type = 1;
+                        page = 1;
+                        break;
+                    case 1:
+                        type = 2;
+                        page = 1;
+                        break;
+                }
+                getPresenter().getDetailList(type,page);
             }
 
             @Override
@@ -130,25 +141,10 @@ public class BaseTeamDetailActivity extends BaseMvpActivity<IMessgListView, Mess
     }
 
     @Override
-    protected MessgListPresenter createPresenter() {
-        return new MessgListPresenter();
+    protected BaseTeamDetailPresenter createPresenter() {
+        return new BaseTeamDetailPresenter();
     }
 
-    @Override
-    public void onSuccess(List<MessageBean> list) {
-        if (list != null) {
-            refreshLayout.finishRefresh(true);
-            mList.clear();
-            if (list.size() == 0) {
-                refreshLayout.resetNoMoreData();
-                rlEmpty.setVisibility(View.VISIBLE);
-            } else {
-                rlEmpty.setVisibility(View.GONE);
-            }
-            mList.addAll(list);
-            adapter.setNewData(mList);
-        }
-    }
 
     @Override
     public void onHideDialog() {
@@ -162,4 +158,21 @@ public class BaseTeamDetailActivity extends BaseMvpActivity<IMessgListView, Mess
     }
 
 
+    @Override
+    public void onDetailListSuccess(List<BaseTeamDetailBean> list) {
+
+        if (list != null) {
+            refreshLayout.finishRefresh(true);
+            if (page == 1) {
+                mList.clear();
+            }
+            if (list.size() == 0) {
+                refreshLayout.resetNoMoreData();
+                rlEmpty.setVisibility(View.VISIBLE);
+            } else {
+                rlEmpty.setVisibility(View.GONE);
+            }
+            mList.addAll(list);
+        }
+    }
 }

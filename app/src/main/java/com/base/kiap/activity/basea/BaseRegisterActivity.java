@@ -19,7 +19,10 @@ import androidx.annotation.RequiresApi;
 
 import com.base.kiap.R;
 import com.base.kiap.base.BaseMvpActivity;
+import com.base.kiap.bean.base.BaseUserBean;
+import com.base.kiap.bean.base.request.RegisterRequest;
 import com.base.kiap.bean.oldbean.UserBean;
+import com.base.kiap.bean.request.LoginBean;
 import com.base.kiap.config.SpCode;
 import com.base.kiap.config.UserHelp;
 import com.base.kiap.databinding.ActBaseRegisterBinding;
@@ -36,7 +39,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class BaseRegisterActivity extends BaseMvpActivity<IBaseLoginView, BaseLoginPresenter> implements ILoginView {
+public class BaseRegisterActivity extends BaseMvpActivity<IBaseLoginView, BaseLoginPresenter> implements IBaseLoginView {
     @BindView(R.id.tv_pone)
     EditText tvPone;
     @BindView(R.id.code)
@@ -45,8 +48,6 @@ public class BaseRegisterActivity extends BaseMvpActivity<IBaseLoginView, BaseLo
     EditText et_invite_code;
     @BindView(R.id.tv_get)
     TextView tvGet;
-    @BindView(R.id.bt_login)
-    Button btLogin;
 
     @BindView(R.id.tv_country)
     TextView tvCountry;
@@ -105,13 +106,12 @@ public class BaseRegisterActivity extends BaseMvpActivity<IBaseLoginView, BaseLo
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (tvPone.getText().toString().trim().length() >= 8
-                        && tvPone.getText().toString().trim().length() <= 11
-                        && code.getText().toString().trim().length() == 4) {
-                    btLogin.setEnabled(true);
-                } else {
-                    btLogin.setEnabled(false);
-                }
+//                if (tvPone.getText().toString().trim().length() == 11
+//                        && code.getText().toString().trim().length() == 4) {
+//                    binding.btRegister.setEnabled(true);
+//                } else {
+//                    binding.btRegister.setEnabled(false);
+//                }
             }
         });
 
@@ -128,57 +128,53 @@ public class BaseRegisterActivity extends BaseMvpActivity<IBaseLoginView, BaseLo
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (tvPone.getText().toString().trim().length() >= 8
-                        && tvPone.getText().toString().trim().length() <= 11
-                        && code.getText().toString().trim().length() == 4) {
-                    btLogin.setEnabled(true);
+//                if (tvPone.getText().toString().trim().length() == 11
+//                        && code.getText().toString().trim().length() == 4) {
+//                    binding.btRegister.setEnabled(true);
+//                } else {
+//                    binding.btRegister.setEnabled(false);
+//                }
+            }
+        });
+        binding.btRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String smsCode = code.getText().toString();
+                String tvPon = tvPone.getText().toString().trim();
+                String inviteCode = et_invite_code.getText().toString().trim();
+                String passWork = binding.password.toString();
+                if(checkPkg(BaseRegisterActivity.this)){
+                    ToastUtil.error(getString(R.string.str_app_correctly));
+                    return;
+                }
+                if (smsCode.isEmpty() || tvPon.isEmpty() || passWork.isEmpty()) {
+                    ToastUtil.normal(getString(R.string.str_tos_login_2));
                 } else {
-                    btLogin.setEnabled(false);
+                    showLoading();
+                    RegisterRequest bean = new RegisterRequest();
+                    bean.phone = tvCountry.getText().toString().substring(1)+tvPon;
+                    bean.smsCode = smsCode;
+                    bean.inviteCode = inviteCode;
+                    bean.passwd = passWork;
+                    getPresenter().onRegister(bean);
                 }
             }
         });
-    }
-
-    @OnClick({R.id.tv_get,R.id.bt_register})
-    public void onViewClicked(View view) {
-        if (mClickHelper.click()) {
-            return;
-        }
-        switch (view.getId()) {
-            case R.id.tv_get:
+        binding.tvGet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 String mPone = tvPone.getText().toString();
-                if (mPone.length() >=8 && mPone.length() <= 11) {
+                if (mPone.length() == 11) {
                     mCountDownTimerUtils.start();
-                    getPresenter().onRegisterCode(mPone,binding.etInviteCode.toString());
+                    getPresenter().onRegisterCode(mPone,binding.etInviteCode.getText().toString());
                 } else {
                     ToastUtil.normal(R.string.str_tos_login_1);
                 }
-                break;
-            case R.id.bt_register:
-                    MainActivity.start(this);
-//                String smsCode = code.getText().toString();
-//                String tvPon = tvPone.getText().toString().trim();
-//                String inviteCode = et_invite_code.getText().toString().trim();
-//                String passWork = binding.password.toString();
-//                if(checkPkg(BaseRegisterActivity.this)){
-//                    ToastUtil.error(getString(R.string.str_app_correctly));
-//                    break;
-//                }
-//                if (smsCode.isEmpty() || tvPon.isEmpty() || passWork.isEmpty()) {
-//                    ToastUtil.normal(getString(R.string.str_tos_login_2));
-//                } else {
-//                    showLoading();
-//                    btLogin.setEnabled(false);
-//                    LoginBean bean = new LoginBean();
-//                    bean.phone = tvCountry.getText().toString().substring(1)+tvPon;
-//                    bean.code = smsCode;
-//                    bean.inviteCode = inviteCode;
-//                    bean.passWord = passWork;
-//                    getPresenter().onLogin(bean);
-//                }
-                break;
-        }
+            }
+        });
+        binding.ivBack.setOnClickListener(v -> finish());
     }
+
 
     /**
      * 检测多开
@@ -204,17 +200,23 @@ public class BaseRegisterActivity extends BaseMvpActivity<IBaseLoginView, BaseLo
         return false;
     }
 
-    @Override
-    public void onLoginSuccess(UserBean bean) {
-        UserHelp.updateUser(bean);
-        UserHelp.updateToken(bean.getToken());
-        MainActivity.start(this);
-        finish();
-    }
 
     @Override
     public void onHideDialog() {
         hideLoading();
+    }
+
+    @Override
+    public void onLoginSuccess(BaseUserBean bean) {
+
+    }
+
+    @Override
+    public void onRegisterSuccess(BaseUserBean bean) {
+        UserHelp.updateBaseUser(bean);
+        UserHelp.updateToken(bean.token);
+        MainActivity.start(this);
+        finish();
     }
 
     public class CountDownTimerUtils extends CountDownTimer {

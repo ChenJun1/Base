@@ -39,27 +39,10 @@ android {
                 throw new Exception(ex.toString())
             }
         }
-
-        debug {
-            try {
-                storeFile file("./keystore/loes.jks")
-                storePassword "asdfghjkl"
-                keyAlias "loes"
-                keyPassword "asdfghjkl"
-            } catch (ex) {
-                throw new Exception(ex.toString())
-            }
-        }
     }
 
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-        }
-        debug {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -81,11 +64,6 @@ android {
                 outputFileName = fileName
             }
         }
-    }
-
-    flavorDimensions "version"
-    productFlavors{
-
     }
 
     compileOptions {

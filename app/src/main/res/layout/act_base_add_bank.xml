@@ -35,8 +35,7 @@
                 android:layout_below="@id/tv_pay01"
                 android:layout_centerHorizontal="true"
                 android:hint="Enter your name"
-                android:inputType="numberPassword"
-                android:maxLength="18"
+                android:maxLength="30"
                 android:maxLines="1"
                 android:textColor="@color/base_text_bla"
                 android:textSize="14sp" />
@@ -58,8 +57,7 @@
                 android:layout_below="@id/tv_pay02"
                 android:layout_centerHorizontal="true"
                 android:hint="Enter your bank name"
-                android:inputType="numberPassword"
-                android:maxLength="18"
+                android:maxLength="30"
                 android:maxLines="1"
                 android:textColor="@color/base_text_bla"
                 android:textSize="14sp" />
@@ -81,7 +79,7 @@
                 android:layout_below="@id/tv_pay03"
                 android:layout_centerHorizontal="true"
                 android:hint="Enter your bank account"
-                android:inputType="numberPassword"
+                android:inputType="number"
                 android:maxLength="18"
                 android:maxLines="1"
                 android:textColor="@color/color_font_black_00"
@@ -104,8 +102,7 @@
                 android:layout_below="@id/tv_pay04"
                 android:layout_centerHorizontal="true"
                 android:hint="Enter ifsc with a length of 11 digits"
-                android:inputType="numberPassword"
-                android:maxLength="11"
+                android:maxLength="30"
                 android:maxLines="1"
                 android:textColor="@color/color_font_black_00"
                 android:textSize="14sp" />
@@ -116,18 +113,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/et_otp"
                 android:layout_marginTop="10dp"
-                android:text="Pin"
+                android:text="Address"
                 android:textColor="@color/color_pic_text2"
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/et_pin"
+                android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_pay05"
                 android:layout_centerHorizontal="true"
-                android:inputType="numberPassword"
-                android:maxLength="6"
+                android:maxLength="30"
                 android:maxLines="1"
                 android:textColor="@color/color_font_black_00"
                 android:textSize="14sp" />
@@ -140,12 +136,13 @@
                 android:layout_below="@+id/et_otp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="140dp"
-                android:background="@drawable/shape_white_bg_add_shadow"
+                android:background="@drawable/bg_btn_0026"
                 android:text="@string/str_pass3"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/tv_notice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -159,6 +156,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_notice"

@@ -29,6 +29,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/bank_name"
             android:layout_below="@+id/tv_inr_numb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,6 +42,7 @@
             android:textSize="@dimen/text_min2" />
 
         <TextView
+            android:id="@+id/tv_buy"
             android:layout_width="wrap_content"
             android:layout_height="26dp"
             android:layout_alignParentEnd="true"

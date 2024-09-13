@@ -4,8 +4,8 @@
        android:radius="42dp">
     </corners>
     <gradient
-        android:startColor="#65472f"
-        android:endColor="#65472f">
+        android:startColor="@color/base_main2"
+        android:endColor="@color/base_main2">
     </gradient>
 <!--    <padding-->
 <!--        android:left="4dp"-->
